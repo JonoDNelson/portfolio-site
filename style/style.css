@@ -14,7 +14,7 @@
 :root {
   --nav-color: #1b242f;
   --highlight-color:#ffaa11;
-  --button-color:#33adff;
+  --button-color:#01a2ff;
   --button-dark-color: #0279c9;
   --section-bg-color: white;
   --section-bg-alt-color: #f3f3f3;
@@ -192,8 +192,6 @@ section .flex-50-gt-sm {
   z-index: 1;
 }
 #home .button {
-  text-align: center;
-  align-items: center;
   padding: 12px 15px 12px 15px;
 }
 
@@ -211,7 +209,6 @@ section .flex-50-gt-sm {
 #about .slideshow-container {
   width: 100%;
   position: relative;
-  margin: auto;
 }
 
 #about .slideshow-container .slide{
@@ -233,7 +230,6 @@ section .flex-50-gt-sm {
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
-  text-align: center;
 }
 
 /* Next & previous buttons */
@@ -246,7 +242,7 @@ section .flex-50-gt-sm {
 #about .slideshow-container button {
   cursor: pointer;
   position: absolute;
-  top: 0%;
+  top: 0;
   height:100%;
   width: 20%;
   padding: 16px;
@@ -352,7 +348,6 @@ section .flex-50-gt-sm {
   height: 25px;
   margin: auto 0;
   overflow: hidden;
-  position: absolute;
 }
 #portfolio .float-bar .row {
   bottom: 0;
@@ -496,7 +491,7 @@ section .flex-50-gt-sm {
     padding: 0 15px;
   }
   #about .skills-wrapper > .flex:first-child {
-    padding: 0 50px 0 50px;
+    padding: 0 50px;
   }
 
   #about .bar {
