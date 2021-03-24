@@ -1,0 +1,578 @@
+@font-face {
+  font-family: "Raleway";
+  src:url("../assets/fonts/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: "Raleway-semibold";
+  src: url("../assets/fonts/Raleway-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Raleway-bold";
+  src: url("../assets/fonts/Raleway-Bold.ttf");
+}
+
+:root {
+  --nav-color: #1b242f;
+  --highlight-color:#ffaa11;
+  --button-color:#33adff;
+  --button-dark-color: #0279c9;
+  --section-bg-color: white;
+  --section-bg-alt-color: #f3f3f3;
+  --contact-placeholder-color: #d0d0d0;
+
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--nav-color);
+  color: white;
+  font-family: "Raleway";
+  font-size: 8pt;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.page-link {
+  cursor: pointer;
+}
+
+.overflow-wrap {
+  overflow-x: hidden;
+}
+
+.button {
+  border: 2px solid white;
+  box-sizing: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13pt;
+  padding: 10px 20px;
+  transition: all 0.5s;
+}
+.button:hover {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+}
+
+.bold {
+  font-family: "Raleway-bold";
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex.row {
+  flex-direction: row;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.highlight {
+  font-family: "Raleway-semibold";
+  color: var(--highlight-color);
+}
+
+.header {
+  color: #444649;
+  font-family: "Raleway-bold";
+  font-size: 25pt;
+  position: relative;
+  position: relative;
+}
+
+.header-bar {
+  background: #444649;
+  height: 4px;
+  margin: 25px 0 0 0;
+  width: 70px;
+}
+
+.label {
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+/* ========= NAV ========= */
+nav {
+  top: 0;
+  left: 0;
+  position: sticky;
+  background: var(--nav-color);
+  border-bottom: 3px solid var(--button-color);
+  height: 50px;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  overflow: scroll;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+nav .link-wrap {
+  background: none;
+  height: initial;
+  position: initial;
+  width: fit-content;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: initial;
+}
+
+nav .link-wrap a {
+  display: inline;
+  font-size: initial;
+  margin: 0 20px;
+}
+
+nav .link-wrap a:hover {
+  color: var(--highlight-color);
+}
+
+nav .active {
+  color: var(--highlight-color);
+}
+
+section {
+  color: #616161;
+  line-height: 11pt;
+  padding: 70px 0 70px 0;
+  position: relative;
+}
+
+section .container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+section:nth-of-type(2n+2) {
+  background: var(--section-bg-color);
+}
+
+section:nth-of-type(2n+3) {
+  background: var(--section-bg-alt-color);
+}
+
+section .flex-50-gt-sm {
+  display: block;
+}
+
+/* ======== HOME ======== */
+#home {
+  color: white;
+  height: calc(100vh);
+  padding: 0 10px;
+  background: var(--nav-color);
+}
+
+#home .text {
+  font-size: 16pt;
+  line-height: 20pt;
+  margin: 0 0 20px 0;
+  pointer-events: none;
+  z-index: 1;
+}
+#home .button {
+  text-align: center;
+  align-items: center;
+  padding: 12px 15px 12px 15px;
+}
+
+/* ======== ABOUT ======== */
+#about .label-wrap .label {
+  margin: 20px 0 10px 0;
+}
+#about .highlight {
+  color: var(--button-color);
+}
+#about .skills-wrapper {
+  align-items:flex-start;
+  width: 100%;
+}
+#about .slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+#about .slideshow-container .slide{
+  display: flex;
+  justify-content: center;
+}
+
+#about .slideshow-container .slide img{
+  box-sizing:border-box;
+  width:100%;
+}
+
+/* Caption text */
+#about .slideshow-container .slide .text{
+  box-sizing:border-box;
+  width:60%;
+  color: #f2f2f2;
+  font-size: inherit;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+#about .slideshow-container .prev {
+  left: 0;
+}
+#about .slideshow-container .next {
+  right: 0;
+}
+#about .slideshow-container button {
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  height:100%;
+  width: 20%;
+  padding: 16px;
+  color: transparent;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.8s ease;
+  border: none;
+  user-select: none;
+  background: transparent; 
+}
+#about .slideshow-container button:hover {
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+}
+#about .slideshow-container button:active, button:focus {
+  outline: none;
+}
+
+/* The dots/bullets/indicators */
+#about .dot-wrapper {
+  text-align: center;
+}
+#about .dot-wrapper .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--section-bg-alt-color);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+#about .dot:hover {
+  background-color: #717171;
+}
+
+
+#about .skills-wrapper .label {
+  margin: 20px 0 15px 0;
+}
+#about .bars-wrap {
+  margin: 16px auto 0 auto;
+  max-width: 90%;
+  width: calc(100% - 15px);
+}
+#about .bar {
+  align-items: flex-end;
+  background-color: var(--section-bg-alt-color);
+  color: #666666;
+  font-size: 7pt;
+  margin: 0 0 12px 0;
+  position: relative;
+}
+#about .bar span {
+  display: none;
+  padding: 0 15px 0 0;
+  z-index: 1;
+}
+#about .bar .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--button-dark-color);
+  opacity: 1;
+  padding: 0;
+}
+#about .bar .tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--button-color);
+  color: white;
+  height: 100%;
+  width: 70px;
+}
+
+/* ======== PORTFOLIO ======== */
+#portfolio {
+  background: var(--section-bg-alt-color);
+}
+#portfolio .container {
+  padding: 0;
+}
+#portfolio .filter-wrap {
+  position: relative;
+  white-space: nowrap;
+}
+#portfolio .filter {
+  cursor: pointer;
+  font-size: 6pt;
+  font-weight: 600;
+  padding: 0 20px;
+}
+#portfolio .float-bar {
+  bottom: 0;
+  left: 30px;
+  top: 0;
+  position: absolute;
+  background: var(--highlight-color);
+  border-radius: 1px;
+  height: 25px;
+  margin: auto 0;
+  overflow: hidden;
+  position: absolute;
+}
+#portfolio .float-bar .row {
+  bottom: 0;
+  left: -30px;
+  top: 0;
+  position: absolute;
+  margin: auto 0;
+}
+#portfolio .float-bar .row .filter {
+  color: white;
+}
+
+#portfolio #gallery {
+  margin: 20px 0;
+}
+
+/* ======== CONTACT ======== */
+ #contact {
+  background-color: #252934;
+  color: white;
+  padding-top: 175px;
+}
+ #contact .header {
+  color: white;
+}
+ #contact .header-bar {
+  background: white;
+  margin: 25px 0 40px 0;
+  width: 110px;
+}
+ #contact .highlight {
+  color: var(--button-color);
+  font-weight: 600;
+}
+ #contact form {
+  margin: 40px auto 0 auto;
+  min-width: 95%;
+}
+#contact ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--contact-placeholder-color);
+  opacity: 1; /* Firefox */
+}
+#contact :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--contact-placeholder-color);
+}
+#contact ::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--contact-placeholder-color);
+}
+
+ #contact input[type=text],
+ #contact input[type=email],
+ #contact textarea {
+  background: #1e242c;
+  border: 0;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-size: 12pt;
+  margin-bottom: 3px;
+  outline: none;
+  padding: 10px 15px;
+  width: 100%;
+}
+ #contact textarea {
+  margin-bottom: 5px;
+  min-height: 150px;
+}
+ #contact .button {
+  background: transparent;
+  color: white;
+  float: right;
+  font-size: 12pt;
+  margin: 5px 0 0 0;
+  outline: 0;
+  padding: 10px 30px;
+}
+ #contact .button:hover {
+  background: var(--button-color);
+}
+ #contact #success {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+ #contact #success.expand {
+  height: 36px;
+}
+ #contact #success div {
+  background: #04c986;
+  border: 1px solid #157c59;
+  color: #157051;
+  font-size: 10pt;
+  font-weight: 600;
+  padding: 5px 0;
+}
+ #contact #close {
+  cursor: pointer;
+  font-size: 12pt;
+  font-weight: 600;
+  padding: 5px 15px;
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 12pt;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    font-size: 30pt;
+  }
+
+  .header-bar {
+    margin: 25px 0 40px 0;
+  }
+
+  .label {
+    font-size: 18pt;
+  }
+  section {
+    line-height: 18pt;
+    padding: 100px 0 130px 0;
+  }
+  section .container {
+    padding: 0 10px;
+  }
+  #home .text {
+    font-size: 32pt;
+    line-height: 36pt;
+  }
+  #about .label-wrap .label {
+    margin: 15px 0 5px 0;
+  }
+  #about .label-wrap > div {
+    padding: 0 15px;
+  }
+  #about .skills-wrapper > .flex:first-child {
+    padding: 0 50px 0 50px;
+  }
+
+  #about .bar {
+    font-size: 11pt;
+    height: 28px;
+    margin: 0 0 15px 0;
+  }
+  #about .bar span {
+    display: initial;
+  }
+  #about .bar .tag {
+    width: 110px;
+  }
+  #portfolio .filter {
+    font-size: 11pt;
+    margin: 0 15px;
+    padding: 0 30px;
+  }
+  #portfolio .float-bar {
+    height: 30px;
+  }
+  #contact {
+    padding: 130px 0 180px 0;
+  }
+  #contact .label {
+    font-size: 16pt;
+    line-height: 22pt;
+  }
+  #contact .date {
+    font-size: 8.5pt;
+  }
+  #contact .bar {
+    margin: 15px 0px;
+  }
+  #contact .text {
+    font-size: 11pt;
+    line-height: 15pt;
+  }
+   #contact form {
+    min-width: 500px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .button {
+    font-size: 16pt;
+  }
+
+  .flex .row-gt-sm {
+    flex-direction: row;
+  }
+
+  .flex-50-gt-sm {
+    box-sizing: border-box;
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    max-height: 100%;
+    max-width: 50%;
+  }
+
+  #about .bars-wrap {
+    margin: 0 0 0 0;
+  }
+
+  #about .bar {
+    height: 40px;
+  }
+  #about .skills-wrapper {
+    margin: 18px 0 0 0;
+  }
+  #about .bar {
+    max-width: 90%;
+  }
+  #portfolio .filter {
+    font-size: 13pt;
+    margin: 0 25px;
+    padding: 0 40px;
+  }
+}

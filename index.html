@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- TODO: 
+        FORMSPREE FOR CONTACT FORM?
+        PUT ANIMATIONS BACK IN
+        ADD MORE PHOTOS TO SLIDESHOW
+        FILL OUT PORTFOLIO SECTION
+        ALWAYS: CLEAN UP EXCESS HTML AND CSS
+      -->
+        <meta charset="utf-8">
+        <title>Jono Nelson's Portfolio</title>
+        <link rel="stylesheet" href="style/style.css" type="text/css" />
+  
+      <!-- LOCAL -->
+      <link rel="stylesheet" href="style/style.css" />
+
+    </head>
+    <body>
+      <!-- HOME -->
+      <section id="home" class="flex height-fit">
+        <div class="text">
+          Hello, I'm <span class="highlight">Jono Nelson</span>:
+          <br />
+          Full-Stack Web Developer.
+          <br />
+          Unity Game Developer.
+        </div>
+        <a href="#about" class="button page-link">Learn more</a>
+      </section>
+       <!-- NAV BAR -->
+       <nav class="flex" id="navbar">
+        <ul class="link-wrap">
+          <a href="#home" class="page-link">HOME</a>
+          <a href="#about" class="page-link">ABOUT</a>
+          <a href="#portfolio" class="page-link">PORTFOLIO</a>
+          <a href="#contact" class="page-link">CONTACT</a>
+          <a href="assets/JNResume.pdf" class="page-link">RESUME</a>
+        </ul>
+      </nav>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container flex">
+          <h1 class="header">
+            ABOUT
+          </h1>
+          <div
+            class="header-bar"
+          ></div>
+          <div class="skills-wrapper flex row-gt-sm">
+            <div class="flex flex-50-gt-sm">
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+                <!-- Full-width images with caption text -->
+                <div class="slide fade">
+                  <img src="assets/images/Iceland.jpeg">
+                  <div class="text">Iceland</div>
+                </div>
+
+                <!-- <div class="slide fade">
+                  <img src="assets/images/Paris.jpeg" style="width:100%">
+                  <div class="text">Paris</div>
+                </div>
+
+                <div class="slide fade">
+                  <img src="assets/images/Orkney.jpeg" style="width:100%">
+                  <div class="text">Orkney</div>
+                </div>
+
+                <div class="slide fade">
+                  <img src="assets/images/Errol.jpeg" style="width:100%">
+                  <div class="text">Errol</div>
+                </div> -->
+
+                <!-- Next and previous buttons -->
+                <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1)">&#10095;</button>
+              </div>
+              <br>
+
+              <!-- The dots/circles -->
+              <div class="dot-wrapper">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+              </div>
+              <div class="label bold">Who am I?</div>
+              <div>
+                I'm a software developer who loves to travel
+                <br />
+                and quit my job to move to Scotland just before the pandemic.
+                <br />
+                I'm back home in Canada now, and want to get back to work!
+                <br />
+                I'm a keen learner and take pride in my projects (whatever they may be)!
+                <br />
+                <a href="#contact" class="page-link highlight">Let's make something cool.</a>
+              </div>
+            </div>
+        
+            <div class="flex flex-50-gt-sm bars-wrap">
+              <div class="bar flex">
+                <div class="bar fill" style="width:90%">
+                  <div class="tag bold flex">C++</div>
+                </div>
+                <span>90%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:90%">
+                  <div class="tag bold flex">HTML</div>
+                </div>
+                <span>90%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:80%">
+                  <div class="tag bold flex">Vue</div>
+                </div>
+                <span>80%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:80%">
+                  <div class="tag bold flex">JavaScript</div>
+                </div>
+                <span>80%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:50%">
+                  <div class="tag bold flex">React</div>
+                </div>
+                <span>50%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:65%">
+                  <div class="tag bold flex">Node.js</div>
+                </div>
+                <span>65%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:65%">
+                  <div class="tag bold flex">Unity</div>
+                </div>
+                <span>65%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:50%">
+                  <div class="tag bold flex">MongoDB</div>
+                </div>
+                <span>50%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:60%">
+                  <div class="tag bold flex">Go</div>
+                </div>
+                <span>60%</span>
+              </div>
+        
+              <div class="bar flex">
+                <div class="bar fill" style="width:50%">
+                  <div class="tag bold flex">Sketch</div>
+                </div>
+                <span>50%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PORTFOLIO -->
+      <section class="flex" id="portfolio">
+        <h1 class="header">PORTFOLIO</h1>
+        <div class="header-bar">
+        <div class="filter-wrap">
+          <ol class="flex row">
+            <div class="filter">ALL</div>
+            <div class="filter">UNITY</div>
+            <div class="filter">VANILLA WEB</div>
+            <div class="filter">REACT</div>
+          </ol>
+          <div class="float-bar">
+            <ol class="flex row">
+              <div class="filter">ALL</div>
+              <div class="filter" >UNITY</div>
+              <div class="filter">VANILLA WEB</div>
+              <div class="filter">REACT</div>
+            </ol>
+          </div>
+        </div>
+
+        <div id="gallery" class="container flex row wrap"></div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container flex">
+          <h1 class="header">
+            CONTACT
+          </h1>
+          <div class="header-bar"></div>
+          <div class="highlight">
+            Have a question or want to work together?
+          </div>
+          <form id="contact-form">
+            <input placeholder="Name" type="text" name="name" required />
+            <input placeholder="Enter email" type="email" name="email" required />
+            <textarea placeholder="Your Message" type="text" name="message"></textarea>
+            <div id="success">
+              <div>
+                Thanks for reaching out,
+                <br />
+                I'll get back to you as soon as I can!<span>
+                  <button id="close">x</button>
+                </span>
+              </div>
+            </div>
+            <input class="button" type="submit" id="submit" value="SUBMIT" />
+          </form>
+        </div>
+      </section>
+    </body>
+</html>
