@@ -1,14 +1,38 @@
+/* raleway-regular - latin */
 @font-face {
-  font-family: "Raleway";
-  src:url("../assets/fonts/Raleway-Regular.ttf");
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../assets/fonts/raleway-v19-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../assets/fonts/raleway-v19-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* raleway-500 - latin */
 @font-face {
-  font-family: "Raleway-semibold";
-  src: url("../assets/fonts/Raleway-SemiBold.ttf");
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../assets/fonts/raleway-v19-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../assets/fonts/raleway-v19-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* raleway-600 - latin */
 @font-face {
-  font-family: "Raleway-bold";
-  src: url("../assets/fonts/Raleway-Bold.ttf");
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../assets/fonts/raleway-v19-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../assets/fonts/raleway-v19-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* raleway-700 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../assets/fonts/raleway-v19-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../assets/fonts/raleway-v19-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 :root {
@@ -63,7 +87,7 @@ body {
 }
 
 .bold {
-  font-family: "Raleway-bold";
+  font-weight: 700;
 }
 
 .flex {
@@ -80,13 +104,14 @@ body {
 }
 
 .highlight {
-  font-family: "Raleway-semibold";
+  font-family: "Raleway";
   color: var(--highlight-color);
+  font-weight: 600;
 }
 
 .header {
   color: #444649;
-  font-family: "Raleway-bold";
+  font-weight: 700;
   font-size: 25pt;
   position: relative;
   position: relative;
@@ -246,7 +271,7 @@ section .flex-50-gt-sm {
   width: 20%;
   padding: 16px;
   color: transparent;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   transition: 0.8s ease;
   border: none;
