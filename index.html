@@ -73,17 +73,17 @@
                 </div>
 
                 <!-- Next and previous buttons -->
-                <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-                <button class="next" onclick="plusSlides(1)">&#10095;</button>
+                <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
+                <button class="next" onclick="nextSlide(1)">&#10095;</button>
               </div>
               <br>
 
               <!-- The dots/circles -->
               <div class="dot-wrapper">
-                <span class="dot" onclick="currentSlide(0)"></span>
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot active" onclick="showSlide(0)"></span>
+                <span class="dot" onclick="showSlide(1)"></span>
+                <span class="dot" onclick="showSlide(2)"></span>
+                <span class="dot" onclick="showSlide(3)"></span>
               </div>
               <div class="label bold">Who am I?</div>
               <div>

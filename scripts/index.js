@@ -3,19 +3,21 @@
    * Throttle onScroll
    * Highlight correct button according to section in onScroll
 */
+/*======== Static Variables ==========*/
+// For sticky nav
+var navbar = document.getElementById("navbar");
+var stickyNavLoc = navbar.offsetTop;
+// For slides navigation
+var slideIndex = 0;
+var slides = Array.from(document.getElementsByClassName("slide"));
+var dots = Array.from(document.getElementsByClassName("dot"));
 
 /*======== onScroll Functionality ==========*/
 window.onscroll = function() {onScroll()};
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function onScroll() {
-  if (window.pageYOffset >= sticky) {
+  if (window.pageYOffset >= stickyNavLoc) {
     navbar.classList.add("sticky")
   } else {
     navbar.classList.remove("sticky");
@@ -23,27 +25,16 @@ function onScroll() {
 }
 
 /*======== #About Slideshow Functionality ==========*/
-var slideIndex = 0;
+function showSlide(n) {
+  slides[slideIndex].style.display = "none";
+  dots[slideIndex].classList.remove("active");
 
-function showSlides(n) {
-  var slides = Array.from(document.getElementsByClassName("slide"));
-  var dots = Array.from(document.getElementsByClassName("dot"));
-
-  slideIndex = (slideIndex + slides.length) % slides.length; // janky JS modulo
-
-  slides.forEach(slide => {slide.style.display = "none"});
-  dots.forEach(dot => {dot.className = dot.className.replace(" active", "")});
+  slideIndex = (n + slides.length) % slides.length; // janky JS modulo
 
   slides[slideIndex].style.display = "flex";  
-  dots[slideIndex].className += " active";
+  dots[slideIndex].classList.add("active");
 }
 
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function nextSlide(n) {
+  showSlide(slideIndex + n);
 }
