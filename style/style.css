@@ -106,9 +106,9 @@ body {
 
 /* ========= NAV ========= */
 nav {
-  top: 0;
+  bottom: -53px;
   left: 0;
-  position: sticky;
+  position: absolute;
   background: var(--nav-color);
   border-bottom: 3px solid var(--button-color);
   height: 50px;
@@ -128,7 +128,6 @@ nav .link-wrap {
   background: none;
   height: initial;
   position: initial;
-  width: fit-content;
   max-width: 100%;
   display: flex;
   justify-content: space-between;
@@ -212,7 +211,7 @@ section .flex-50-gt-sm {
 }
 
 #about .slideshow-container .slide{
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
