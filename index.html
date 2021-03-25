@@ -14,6 +14,7 @@
   
       <!-- LOCAL -->
       <link rel="stylesheet" href="style/style.css" />
+      <script src="scripts/index.js" defer></script>
 
     </head>
     <body>
@@ -35,7 +36,7 @@
           <a href="#about" class="page-link">ABOUT</a>
           <a href="#portfolio" class="page-link">PORTFOLIO</a>
           <a href="#contact" class="page-link">CONTACT</a>
-          <a href="assets/JNResume.pdf" class="page-link">RESUME</a>
+          <a href="assets/JNResume.pdf" class="page-link" target="_blank">RESUME</a>
         </ul>
       </nav>
       <!-- ABOUT -->
@@ -57,20 +58,20 @@
                   <div class="text">Iceland</div>
                 </div>
 
-                <!-- <div class="slide fade">
-                  <img src="assets/images/Paris.jpeg" style="width:100%">
+                <div class="slide fade">
+                  <img src="assets/images/Paris.jpeg">
                   <div class="text">Paris</div>
                 </div>
 
                 <div class="slide fade">
-                  <img src="assets/images/Orkney.jpeg" style="width:100%">
+                  <img src="assets/images/Orkney.jpeg">
                   <div class="text">Orkney</div>
                 </div>
 
                 <div class="slide fade">
-                  <img src="assets/images/Errol.jpeg" style="width:100%">
+                  <img src="assets/images/Errol.jpeg">
                   <div class="text">Errol</div>
-                </div> -->
+                </div>
 
                 <!-- Next and previous buttons -->
                 <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
@@ -80,10 +81,10 @@
 
               <!-- The dots/circles -->
               <div class="dot-wrapper">
+                <span class="dot" onclick="currentSlide(0)"></span>
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
               </div>
               <div class="label bold">Who am I?</div>
               <div>
