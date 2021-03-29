@@ -9,16 +9,16 @@
       -->
         <meta charset="utf-8">
         <title>Jono Nelson's Portfolio</title>
-        <link rel="stylesheet" href="style/style.css" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
   
       <!-- LOCAL -->
-      <link rel="stylesheet" href="style/style.css" />
+      <link rel="stylesheet" href="style/style.css" type="text/css" />
       <script src="scripts/index.js" defer></script>
 
     </head>
     <body>
       <!-- HOME -->
-      <section id="home" class="flex height-fit">
+      <section id="home" class="flex height-fit section">
         <div class="text">
           Hello, I'm <span class="highlight">Jono Nelson</span>:
           <br />
@@ -31,22 +31,18 @@
        <!-- NAV BAR -->
        <nav class="flex" id="navbar">
         <ul class="link-wrap">
-          <a href="#home" class="page-link">HOME</a>
-          <a href="#about" class="page-link">ABOUT</a>
-          <a href="#portfolio" class="page-link">PORTFOLIO</a>
-          <a href="#contact" class="page-link">CONTACT</a>
-          <a href="assets/JNResume.pdf" class="page-link" target="_blank">RESUME</a>
+          <li><a href="#home" class="page-link">HOME</a></li>
+          <li><a href="#about" class="page-link">ABOUT</a></li>
+          <li><a href="#portfolio" class="page-link">PORTFOLIO</a></li>
+          <li><a href="#contact" class="page-link">CONTACT</a></li>
+          <li><a href="assets/JNResume.pdf" class="page-link" target="_blank">RESUME</a></li>
         </ul>
       </nav>
       <!-- ABOUT -->
-      <section id="about">
+      <section id="about" class="section">
         <div class="container flex">
-          <h1 class="header">
-            ABOUT
-          </h1>
-          <div
-            class="header-bar"
-          ></div>
+          <h1 class="header">ABOUT</h1>
+          <div class="header-bar"></div>
           <div class="skills-wrapper flex row-gt-sm">
             <div class="flex flex-50-gt-sm">
               <!-- Slideshow container -->
@@ -73,17 +69,17 @@
                 </div>
 
                 <!-- Next and previous buttons -->
-                <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-                <button class="next" onclick="plusSlides(1)">&#10095;</button>
+                <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
+                <button class="next" onclick="nextSlide(1)">&#10095;</button>
               </div>
               <br>
 
               <!-- The dots/circles -->
               <div class="dot-wrapper">
-                <span class="dot" onclick="currentSlide(0)"></span>
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot active" onclick="showSlide(0)"></span>
+                <span class="dot" onclick="showSlide(1)"></span>
+                <span class="dot" onclick="showSlide(2)"></span>
+                <span class="dot" onclick="showSlide(3)"></span>
               </div>
               <div class="label bold">Who am I?</div>
               <div>
@@ -174,22 +170,22 @@
         </div>
       </section>
       <!-- PORTFOLIO -->
-      <section class="flex" id="portfolio">
+      <section class="flex section" id="portfolio">
         <h1 class="header">PORTFOLIO</h1>
         <div class="header-bar">
         <div class="filter-wrap">
           <ol class="flex row">
-            <div class="filter">ALL</div>
-            <div class="filter">UNITY</div>
-            <div class="filter">VANILLA WEB</div>
-            <div class="filter">REACT</div>
+            <li class="filter">ALL</li>
+            <li class="filter">UNITY</li>
+            <li class="filter">VANILLA WEB</li>
+            <li class="filter">REACT</li>
           </ol>
           <div class="float-bar">
             <ol class="flex row">
-              <div class="filter">ALL</div>
-              <div class="filter" >UNITY</div>
-              <div class="filter">VANILLA WEB</div>
-              <div class="filter">REACT</div>
+              <li class="filter">ALL</li>
+              <li class="filter" >UNITY</li>
+              <li class="filter">VANILLA WEB</li>
+              <li class="filter">REACT</li>
             </ol>
           </div>
         </div>
@@ -198,11 +194,9 @@
       </section>
 
       <!-- CONTACT -->
-      <section id="contact">
+      <section id="contact" class="section">
         <div class="container flex">
-          <h1 class="header">
-            CONTACT
-          </h1>
+          <h1 class="header">CONTACT</h1>
           <div class="header-bar"></div>
           <div class="highlight">
             Have a question or want to work together?

@@ -1,49 +1,63 @@
 /*
    TODO: 
    * Throttle onScroll
-   * Highlight correct button according to section in onScroll
+   * CONTACT FORM
 */
+/*======== Static Variables ==========*/
+// For sticky nav
+var navbar = document.getElementById("navbar");
+document.getelement
+var stickyNavLoc = navbar.offsetTop;
+// For highlighting nav links
+let navLinks = document.querySelectorAll("nav ul li a");
+let sections = Array.from(document.getElementsByClassName("section"));
+
+// For slides navigation
+var slideIndex = 0;
+var slides = Array.from(document.getElementsByClassName("slide"));
+var dots = Array.from(document.getElementsByClassName("dot"));
 
 /*======== onScroll Functionality ==========*/
-window.onscroll = function() {onScroll()};
+window.onscroll = function() {
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function onScroll() {
-  if (window.pageYOffset >= sticky) {
+  // For sticky nav
+  // Add sticky class to the navbar when you reach its scroll position.
+  // Remove "sticky" when you leave the scroll position
+  if (window.pageYOffset >= stickyNavLoc) {
     navbar.classList.add("sticky")
   } else {
     navbar.classList.remove("sticky");
   }
+
+  // For highlighting nav links
+  let fromTop = window.scrollY;
+  let el = document.querySelector('nav .active')
+  if(el) {
+    el.classList.remove('active');
+  }
+  
+  if(fromTop < sections[1].offsetTop) {
+    navLinks[0].classList.add('active');
+  } else if (fromTop < sections[2].offsetTop) {
+    navLinks[1].classList.add('active');
+  } else if (fromTop < sections[3].offsetTop) {
+    navLinks[2].classList.add('active');
+  } else {
+      navLinks[3].classList.add('active');
+  }
 }
 
 /*======== #About Slideshow Functionality ==========*/
-var slideIndex = 0;
+function showSlide(n) {
+  slides[slideIndex].style.display = "none";
+  dots[slideIndex].classList.remove("active");
 
-function showSlides(n) {
-  var slides = Array.from(document.getElementsByClassName("slide"));
-  var dots = Array.from(document.getElementsByClassName("dot"));
-
-  slideIndex = (slideIndex + slides.length) % slides.length; // janky JS modulo
-
-  slides.forEach(slide => {slide.style.display = "none"});
-  dots.forEach(dot => {dot.className = dot.className.replace(" active", "")});
+  slideIndex = (n + slides.length) % slides.length; // janky JS modulo
 
   slides[slideIndex].style.display = "flex";  
-  dots[slideIndex].className += " active";
+  dots[slideIndex].classList.add("active");
 }
 
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function nextSlide(n) {
+  showSlide(slideIndex + n);
 }
