@@ -68,10 +68,6 @@ body {
   cursor: pointer;
 }
 
-.overflow-wrap {
-  overflow-x: hidden;
-}
-
 .button {
   border: 2px solid white;
   box-sizing: inherit;
@@ -120,7 +116,7 @@ body {
 .header-bar {
   background: #444649;
   height: 4px;
-  margin: 25px 0 0 0;
+  margin: 25px 0 40px 0;
   width: 70px;
 }
 
@@ -131,7 +127,6 @@ body {
 
 /* ========= NAV ========= */
 nav {
-  bottom: -53px;
   left: 0;
   position: absolute;
   background: var(--nav-color);
@@ -159,13 +154,17 @@ nav .link-wrap {
   padding: initial;
 }
 
-nav .link-wrap a {
+nav ul {
+  list-style: none;
+}
+
+nav a {
   display: inline;
   font-size: initial;
   margin: 0 20px;
 }
 
-nav .link-wrap a:hover {
+nav a:hover {
   color: var(--highlight-color);
 }
 
@@ -203,7 +202,7 @@ section .flex-50-gt-sm {
 /* ======== HOME ======== */
 #home {
   color: white;
-  height: calc(100vh);
+  height: 100vh;
   padding: 0 10px;
   background: var(--nav-color);
 }
@@ -227,7 +226,7 @@ section .flex-50-gt-sm {
   color: var(--button-color);
 }
 #about .skills-wrapper {
-  align-items:flex-start;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -313,7 +312,7 @@ section .flex-50-gt-sm {
   background-color: #717171;
 }
 #about .bars-wrap {
-  margin: 16px auto 0 auto;
+  margin: 40px auto 0 auto;
   max-width: 90%;
   width: calc(100% - 15px);
 }
@@ -322,6 +321,7 @@ section .flex-50-gt-sm {
   background-color: var(--section-bg-alt-color);
   color: #666666;
   font-size: 7pt;
+  height: 22px;
   margin: 0 0 12px 0;
   position: relative;
 }
@@ -351,6 +351,10 @@ section .flex-50-gt-sm {
 /* ======== PORTFOLIO ======== */
 #portfolio {
   background: var(--section-bg-alt-color);
+}
+
+#portfolio ol li {
+  list-style-type: none;
 }
 #portfolio .container {
   padding: 0;
@@ -402,7 +406,6 @@ section .flex-50-gt-sm {
 }
  #contact .header-bar {
   background: white;
-  margin: 25px 0 40px 0;
   width: 110px;
 }
  #contact .highlight {
@@ -493,10 +496,6 @@ section .flex-50-gt-sm {
     font-size: 30pt;
   }
 
-  .header-bar {
-    margin: 25px 0 40px 0;
-  }
-
   .label {
     font-size: 18pt;
   }
@@ -515,10 +514,10 @@ section .flex-50-gt-sm {
     margin: 15px 0 5px 0;
   }
   #about .label-wrap > div {
-    padding: 0 15px;
+    margin: 0 15px;
   }
   #about .skills-wrapper > .flex:first-child {
-    padding: 0 50px;
+    margin: 0 50px;
   }
 
   #about .bar {
