@@ -6,7 +6,7 @@
 /*======== Static Variables ==========*/
 // For sticky nav
 var navbar = document.getElementById("navbar");
-document.getelement
+const fromTopOffsetBuffer = 25;
 var stickyNavLoc = navbar.offsetTop;
 // For highlighting nav links
 let navLinks = document.querySelectorAll("nav ul li a");
@@ -30,7 +30,7 @@ window.onscroll = function() {
   }
 
   // For highlighting nav links
-  let fromTop = window.scrollY;
+  let fromTop = window.scrollY + fromTopOffsetBuffer;
   let el = document.querySelector('nav .active')
   if(el) {
     el.classList.remove('active');
@@ -61,3 +61,46 @@ function showSlide(n) {
 function nextSlide(n) {
   showSlide(slideIndex + n);
 }
+
+/*======== Form Submissions ==========*/
+  async function handleFormSubmit(event) {
+    event.preventDefault();
+  
+    const form = event.currentTarget;
+    const url = form.action;
+  
+    FormData(form);
+
+    try {
+      const responseData = await postJSON({ url, formData });
+      // Show success w/submit button here.
+      console.log({ responseData });
+      
+  
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  async function postJSON({ url, data }) {
+    const dataObj = Object.fromEntries(data.entries());
+    const dataJSON = JSON.stringify(dataObj);
+  
+    const options = {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: dataJSON,
+    };
+  
+    const response = await fetch(url, options);
+  
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      throw new Error(errorMessage);
+    }
+  
+    return response.json();
+  }
