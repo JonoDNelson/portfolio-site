@@ -63,27 +63,30 @@ function nextSlide(n) {
 }
 
 /*======== Form Submissions ==========*/
-  async function handleFormSubmit(event) {
-    event.preventDefault();
-  
-    const form = event.currentTarget;
-    const url = form.action;
-  
-    FormData(form);
+  async function handleFormSubmit(id) {
+    var form;
+    var url;
 
-    try {
-      const responseData = await postJSON({ url, formData });
-      // Show success w/submit button here.
-      console.log({ responseData });
-      
+    switch(id) {
+      case 'contact-submit':
+      default:
+        form = document.getElementById("contact-form");
+        url = 'http://localhost:5000/contact';
+    }
   
-    } catch (error) {
-      console.error(error);
+    if(form.reportValidity()) {
+      try {
+        const responseData = await postJSON( url, new FormData(form) );
+        // Show success w/submit button here.
+        console.log({ responseData });
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
   
-  async function postJSON({ url, data }) {
-    const dataObj = Object.fromEntries(data.entries());
+  async function postJSON( url, data ) {
+    const dataObj = Object.fromEntries(data);
     const dataJSON = JSON.stringify(dataObj);
   
     const options = {
@@ -94,13 +97,12 @@ function nextSlide(n) {
       },
       body: dataJSON,
     };
-  
+
     const response = await fetch(url, options);
-  
     if (!response.ok) {
-      const errorMessage = await response.text();
+      const errorMessage = `Error ${response.status}: ${response.statusText}`;
       throw new Error(errorMessage);
     }
   
-    return response.json();
+    return await response.json();
   }
