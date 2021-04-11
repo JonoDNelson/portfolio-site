@@ -71,7 +71,7 @@ function nextSlide(n) {
       case 'contact-submit':
       default:
         form = document.getElementById("contact-form");
-        url = 'http://localhost:5000/contact';
+        url = 'https://jonodnelson-portfolio.herokuapp.com/contact';
     }
   
     if(form.reportValidity()) {

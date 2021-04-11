@@ -62,7 +62,7 @@ app.post("/contact", (req, res) => {
   // Create mailable object from request JSON
   const mail = {
     sender: `${req.body.name} <${req.body.email}>`,
-    to: process.env.SMTP_DEV_EMAIL,
+    to: transport.auth.user,
     subject: "Portfolio Site Contact!!",
     text: `From: ${req.body.name} <${req.body.email}> \n\n${req.body.message}`,
   };
