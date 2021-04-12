@@ -30,13 +30,15 @@ app.use(express.json());
 // Create transport
 let transport;
 if(!isDev) {
-  transport = nodemailer.createTransport({
-    service: "gmail",
+  transport = {
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASS,
     },
-  });
+  };
 } else {
   transport = {
     host: "smtp.ethereal.email",
@@ -52,7 +54,7 @@ if(!isDev) {
 const transporter = nodemailer.createTransport(transport)
 // Verify connection configuration
 transporter.verify(function (error, success) {
-  if (error) 
+  if (error)
     console.log(error);
   else
     console.log("Server is ready to send mail!");
