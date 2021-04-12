@@ -6,7 +6,7 @@
 /*======== Static Variables ==========*/
 // For sticky nav
 var navbar = document.getElementById("navbar");
-document.getelement
+const fromTopOffsetBuffer = 25;
 var stickyNavLoc = navbar.offsetTop;
 // For highlighting nav links
 let navLinks = document.querySelectorAll("nav ul li a");
@@ -30,7 +30,7 @@ window.onscroll = function() {
   }
 
   // For highlighting nav links
-  let fromTop = window.scrollY;
+  let fromTop = window.scrollY + fromTopOffsetBuffer;
   let el = document.querySelector('nav .active')
   if(el) {
     el.classList.remove('active');
@@ -61,3 +61,48 @@ function showSlide(n) {
 function nextSlide(n) {
   showSlide(slideIndex + n);
 }
+
+/*======== Form Submissions ==========*/
+  async function handleFormSubmit(id) {
+    var form;
+    var url;
+
+    switch(id) {
+      case 'contact-submit':
+      default:
+        form = document.getElementById("contact-form");
+        url = 'https://jonodnelson-portfolio.herokuapp.com/contact';
+    }
+  
+    if(form.reportValidity()) {
+      try {
+        const responseData = await postJSON( url, new FormData(form) );
+        // Show success w/submit button here.
+        console.log({ responseData });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+  
+  async function postJSON( url, data ) {
+    const dataObj = Object.fromEntries(data);
+    const dataJSON = JSON.stringify(dataObj);
+  
+    const options = {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: dataJSON,
+    };
+
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      const errorMessage = `Error ${response.status}: ${response.statusText}`;
+      throw new Error(errorMessage);
+    }
+  
+    return await response.json();
+  }

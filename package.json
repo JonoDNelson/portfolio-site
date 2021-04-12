@@ -1,0 +1,20 @@
+{
+  "name": "jonodnelson-portfolio-site",
+  "version": "0.1.0",
+  "description": "Simple portfolio site with a nodemailer contact form",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no tests written\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jono Nelson",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "nodemailer": "^6.4.11"
+  },
+  "engines": {
+    "node": "v14.16.0"
+  }
+}

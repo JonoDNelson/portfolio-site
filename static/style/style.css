@@ -100,7 +100,6 @@ body {
 }
 
 .highlight {
-  font-family: "Raleway";
   color: var(--highlight-color);
   font-weight: 600;
 }
