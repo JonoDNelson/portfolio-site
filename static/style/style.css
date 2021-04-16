@@ -51,7 +51,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 body {
   background-color: var(--nav-color);
   color: white;
@@ -63,11 +62,9 @@ body {
   overflow-x: hidden;
   text-align: center;
 }
-
 .page-link {
   cursor: pointer;
 }
-
 .button {
   border: 2px solid white;
   box-sizing: inherit;
@@ -81,11 +78,9 @@ body {
   background-color: var(--button-color);
   border-color: var(--button-color);
 }
-
 .bold {
   font-weight: 700;
 }
-
 .flex {
   align-items: center;
   display: flex;
@@ -98,12 +93,10 @@ body {
 .flex.wrap {
   flex-wrap: wrap;
 }
-
 .highlight {
   color: var(--highlight-color);
   font-weight: 600;
 }
-
 .header {
   color: #444649;
   font-weight: 700;
@@ -111,14 +104,12 @@ body {
   position: relative;
   position: relative;
 }
-
 .header-bar {
   background: #444649;
   height: 4px;
   margin: 25px 0 40px 0;
   width: 70px;
 }
-
 .label {
   font-size: 14pt;
   font-weight: 500;
@@ -137,12 +128,10 @@ nav {
   display: flex;
   overflow: scroll;
 }
-
 .sticky {
   position: fixed;
   top: 0;
 }
-
 nav .link-wrap {
   background: none;
   height: initial;
@@ -152,32 +141,28 @@ nav .link-wrap {
   justify-content: space-between;
   padding: initial;
 }
-
 nav ul {
   list-style: none;
 }
-
 nav a {
   display: inline;
   font-size: initial;
   margin: 0 20px;
 }
-
 nav a:hover {
   color: var(--highlight-color);
 }
-
 nav .active {
   color: var(--highlight-color);
 }
 
+/* ======== ALL SECTIONS ======== */
 section {
   color: #616161;
   line-height: 11pt;
   padding: 70px 0 70px 0;
   position: relative;
 }
-
 section .container {
   box-sizing: border-box;
   margin: 0 auto;
@@ -185,15 +170,12 @@ section .container {
   padding: 0 10px;
   width: 100%;
 }
-
 section:nth-of-type(2n+2) {
   background: var(--section-bg-color);
 }
-
 section:nth-of-type(2n+3) {
   background: var(--section-bg-alt-color);
 }
-
 section .flex-50-gt-sm {
   display: block;
 }
@@ -228,30 +210,24 @@ section .flex-50-gt-sm {
   align-items: flex-start;
   width: 100%;
 }
-
 #about .skills-wrapper .label {
   margin: 20px 0 15px 0;
 }
-
 #about .slideshow-container {
   width: 100%;
   position: relative;
 }
-
 #about .slideshow-container .slide{
   display: none;
   justify-content: center;
 }
-
 #about .slideshow-container .slide:first-of-type {
   display:flex;
 }
-
 #about .slideshow-container .slide img{
   box-sizing:border-box;
   width:100%;
 }
-
 /* Caption text */
 #about .slideshow-container .slide .text{
   box-sizing:border-box;
@@ -262,7 +238,6 @@ section .flex-50-gt-sm {
   position: absolute;
   bottom: 8px;
 }
-
 /* Next & previous buttons */
 #about .slideshow-container .prev {
   left: 0;
@@ -292,7 +267,6 @@ section .flex-50-gt-sm {
 #about .slideshow-container :is(button:active, button:focus) {
   outline: none;
 }
-
 /* The dots/bullets/indicators */
 #about .dot-wrapper {
   text-align: center;
@@ -351,7 +325,6 @@ section .flex-50-gt-sm {
 #portfolio {
   background: var(--section-bg-alt-color);
 }
-
 #portfolio ol li {
   list-style-type: none;
 }
@@ -389,7 +362,6 @@ section .flex-50-gt-sm {
 #portfolio .float-bar .row .filter {
   color: white;
 }
-
 #portfolio #gallery {
   margin: 20px 0;
 }
@@ -425,7 +397,6 @@ section .flex-50-gt-sm {
 #contact ::-ms-input-placeholder { /* Microsoft Edge */
   color: var(--contact-placeholder-color);
 }
-
  #contact input[type=text],
  #contact input[type=email],
  #contact textarea {
@@ -486,15 +457,12 @@ section .flex-50-gt-sm {
   body {
     font-size: 12pt;
   }
-
   .container {
     padding: 0 20px;
   }
-
   .header {
     font-size: 30pt;
   }
-
   .label {
     font-size: 18pt;
   }
@@ -505,10 +473,14 @@ section .flex-50-gt-sm {
   section .container {
     padding: 0 10px;
   }
+
+  /* ========= HOME ========= */
   #home .text {
     font-size: 32pt;
     line-height: 36pt;
   }
+
+  /* ========= ABOUT ========= */
   #about .label-wrap .label {
     margin: 15px 0 5px 0;
   }
@@ -518,7 +490,6 @@ section .flex-50-gt-sm {
   #about .skills-wrapper > .flex:first-child {
     margin: 0 50px;
   }
-
   #about .bar {
     font-size: 11pt;
     height: 28px;
@@ -530,6 +501,8 @@ section .flex-50-gt-sm {
   #about .bar .tag {
     width: 110px;
   }
+
+  /* ========= PORTFOLIO ========= */
   #portfolio .filter {
     font-size: 11pt;
     margin: 0 15px;
@@ -538,6 +511,8 @@ section .flex-50-gt-sm {
   #portfolio .float-bar {
     height: 30px;
   }
+
+  /* ========= CONTACT ========= */
   #contact {
     padding: 130px 0 180px 0;
   }
@@ -559,15 +534,14 @@ section .flex-50-gt-sm {
     min-width: 500px;
   }
 }
+
 @media screen and (min-width: 960px) {
   .button {
     font-size: 16pt;
   }
-
   .flex .row-gt-sm {
     flex-direction: row;
   }
-
   .flex-50-gt-sm {
     box-sizing: border-box;
     -webkit-flex: 1 1 50%;
@@ -577,10 +551,10 @@ section .flex-50-gt-sm {
     max-width: 50%;
   }
 
+/* ========= ABOUT ========= */
   #about .bars-wrap {
-    margin: 0 0 0 0;
+    margin: 0;
   }
-
   #about .bar {
     height: 40px;
   }
@@ -590,6 +564,8 @@ section .flex-50-gt-sm {
   #about .bar {
     max-width: 90%;
   }
+
+  /* ========= PORTFOLIO ========= */
   #portfolio .filter {
     font-size: 13pt;
     margin: 0 25px;

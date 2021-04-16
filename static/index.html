@@ -1,222 +1,217 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <!-- TODO: 
-        PUT ANIMATIONS BACK IN
-        FILL OUT PORTFOLIO SECTION
-        ALWAYS: CLEAN UP EXCESS HTML AND CSS
-      -->
-        <meta charset="utf-8">
-        <title>Jono Nelson's Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  
-      <!-- LOCAL -->
-      <link rel="stylesheet" href="./style/style.css" type="text/css" />
-      <script src="./scripts/index.js" defer></script>
-      <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+  <head>
+    <meta charset="utf-8">
+    <title>Jono Nelson's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    </head>
-    <body>
-      <!-- HOME -->
-      <section id="home" class="flex height-fit section">
-        <div class="text">
-          Hello, I'm <span class="highlight">Jono Nelson</span>:
-          <br />
-          Full-Stack Web Developer.
-          <br />
-          Unity Game Developer.
-        </div>
-        <a href="#about" class="button page-link">Learn more</a>
-      </section>
-       <!-- NAV BAR -->
-       <nav class="flex" id="navbar">
-        <ul class="link-wrap">
-          <li><a href="#home" class="page-link">HOME</a></li>
-          <li><a href="#about" class="page-link">ABOUT</a></li>
-          <li><a href="#portfolio" class="page-link">PORTFOLIO</a></li>
-          <li><a href="#contact" class="page-link">CONTACT</a></li>
-          <li><a href="assets/JNResume.pdf" class="page-link" target="_blank">RESUME</a></li>
-        </ul>
-      </nav>
-      <!-- ABOUT -->
-      <section id="about" class="section">
-        <div class="container flex">
-          <h1 class="header">ABOUT</h1>
-          <div class="header-bar"></div>
-          <div class="skills-wrapper flex row-gt-sm">
-            <div class="flex flex-50-gt-sm">
-              <!-- Slideshow container -->
-              <div class="slideshow-container">
-                <!-- Full-width images with caption text -->
-                <div class="slide fade">
-                  <img src="assets/images/Iceland.jpeg">
-                  <div class="text">Iceland</div>
-                </div>
-
-                <div class="slide fade">
-                  <img src="assets/images/Paris.jpeg">
-                  <div class="text">Paris</div>
-                </div>
-
-                <div class="slide fade">
-                  <img src="assets/images/Orkney.jpeg">
-                  <div class="text">Orkney</div>
-                </div>
-
-                <div class="slide fade">
-                  <img src="assets/images/Errol.jpeg">
-                  <div class="text">Errol</div>
-                </div>
-
-                <!-- Next and previous buttons -->
-                <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
-                <button class="next" onclick="nextSlide(1)">&#10095;</button>
+    <!-- LOCAL -->
+    <link rel="stylesheet" href="./style/style.css" type="text/css" />
+    <script src="./scripts/index.js" defer></script>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- HOME -->
+    <section id="home" class="flex height-fit section">
+      <div class="text">
+        Hello, I'm <span class="highlight">Jono Nelson</span>:
+        <br />
+        Full-Stack Web Developer.
+        <br />
+        Unity Game Developer.
+      </div>
+      <a href="#about" class="button page-link">Learn more</a>
+    </section>
+    <!-- NAV BAR -->
+    <div id="nav-sentinel"></div>
+    <nav class="flex" id="navbar">
+      <ul class="link-wrap">
+        <li><a href="#home" class="page-link">HOME</a></li>
+        <li><a href="#about" class="page-link">ABOUT</a></li>
+        <li><a href="#portfolio" class="page-link">PORTFOLIO</a></li>
+        <li><a href="#contact" class="page-link">CONTACT</a></li>
+        <li><a href="assets/JNResume.pdf" class="page-link" target="_blank">RESUME</a></li>
+      </ul>
+    </nav>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container flex">
+        <h1 class="header">ABOUT</h1>
+        <div class="header-bar"></div>
+        <div class="skills-wrapper flex row-gt-sm">
+          <div class="flex flex-50-gt-sm">
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+              <!-- Full-width images with caption text -->
+              <div class="slide fade">
+                <img src="assets/images/Iceland.webp">
+                <div class="text">Iceland</div>
               </div>
-              <br>
 
-              <!-- The dots/circles -->
-              <div class="dot-wrapper">
-                <span class="dot active" onclick="showSlide(0)"></span>
-                <span class="dot" onclick="showSlide(1)"></span>
-                <span class="dot" onclick="showSlide(2)"></span>
-                <span class="dot" onclick="showSlide(3)"></span>
+              <div class="slide fade">
+                <img loading="lazy" src="assets/images/Paris.webp">
+                <div class="text">Paris</div>
               </div>
-              <div class="label bold">Who am I?</div>
-              <div>
-                I'm a software developer who loves to travel
-                <br />
-                and quit my job to move to Scotland just before the pandemic.
-                <br />
-                I'm back home in Canada now, and want to get back to work!
-                <br />
-                I'm a keen learner and take pride in my projects (whatever they may be)!
-                <br />
-                <a href="#contact" class="page-link highlight">Let's make something cool.</a>
+
+              <div class="slide fade">
+                <img loading="lazy" src="assets/images/Orkney.webp">
+                <div class="text">Orkney</div>
               </div>
+
+              <div class="slide fade">
+                <img loading="lazy" src="assets/images/Errol.webp">
+                <div class="text">Errol</div>
+              </div>
+
+              <!-- Next and previous buttons -->
+              <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
+              <button class="next" onclick="nextSlide(1)">&#10095;</button>
             </div>
-        
-            <div class="flex flex-50-gt-sm bars-wrap">
-              <div class="bar flex">
-                <div class="bar fill" style="width:90%">
-                  <div class="tag bold flex">C++</div>
-                </div>
-                <span>90%</span>
+            <br>
+
+            <!-- The dots/circles -->
+            <div class="dot-wrapper">
+              <span class="dot active" onclick="showSlide(0)"></span>
+              <span class="dot" onclick="showSlide(1)"></span>
+              <span class="dot" onclick="showSlide(2)"></span>
+              <span class="dot" onclick="showSlide(3)"></span>
+            </div>
+            <div class="label bold">Who am I?</div>
+            <div>
+              I'm a software developer who loves to travel
+              <br />
+              and quit my job to move to Scotland just before the pandemic.
+              <br />
+              I'm back home in Canada now, and want to get back to work!
+              <br />
+              I'm a keen learner and take pride in my projects (whatever they may be)!
+              <br />
+              <a href="#contact" class="page-link highlight">Let's make something cool.</a>
+            </div>
+          </div>
+      
+          <div class="flex flex-50-gt-sm bars-wrap">
+            <div class="bar flex">
+              <div class="bar fill" style="width:90%">
+                <div class="tag bold flex">C++</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:90%">
-                  <div class="tag bold flex">HTML</div>
-                </div>
-                <span>90%</span>
+              <span>90%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:90%">
+                <div class="tag bold flex">HTML</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:80%">
-                  <div class="tag bold flex">Vue</div>
-                </div>
-                <span>80%</span>
+              <span>90%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:80%">
+                <div class="tag bold flex">Vue</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:80%">
-                  <div class="tag bold flex">JavaScript</div>
-                </div>
-                <span>80%</span>
+              <span>80%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:80%">
+                <div class="tag bold flex">JavaScript</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:50%">
-                  <div class="tag bold flex">React</div>
-                </div>
-                <span>50%</span>
+              <span>80%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:50%">
+                <div class="tag bold flex">React</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:65%">
-                  <div class="tag bold flex">Node.js</div>
-                </div>
-                <span>65%</span>
+              <span>50%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:65%">
+                <div class="tag bold flex">Node.js</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:65%">
-                  <div class="tag bold flex">Unity</div>
-                </div>
-                <span>65%</span>
+              <span>65%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:65%">
+                <div class="tag bold flex">Unity</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:50%">
-                  <div class="tag bold flex">MongoDB</div>
-                </div>
-                <span>50%</span>
+              <span>65%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:50%">
+                <div class="tag bold flex">MongoDB</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:60%">
-                  <div class="tag bold flex">Go</div>
-                </div>
-                <span>60%</span>
+              <span>50%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:60%">
+                <div class="tag bold flex">Go</div>
               </div>
-        
-              <div class="bar flex">
-                <div class="bar fill" style="width:50%">
-                  <div class="tag bold flex">Sketch</div>
-                </div>
-                <span>50%</span>
+              <span>60%</span>
+            </div>
+      
+            <div class="bar flex">
+              <div class="bar fill" style="width:50%">
+                <div class="tag bold flex">Sketch</div>
               </div>
+              <span>50%</span>
             </div>
           </div>
         </div>
-      </section>
-      <!-- PORTFOLIO -->
-      <section class="flex section" id="portfolio">
-        <h1 class="header">PORTFOLIO</h1>
-        <div class="header-bar">
-        <div class="filter-wrap">
+      </div>
+    </section>
+    <!-- PORTFOLIO -->
+    <section class="flex section" id="portfolio">
+      <h1 class="header">PORTFOLIO</h1>
+      <div class="header-bar">
+      <div class="filter-wrap">
+        <ol class="flex row">
+          <li class="filter">ALL</li>
+          <li class="filter">UNITY</li>
+          <li class="filter">VANILLA WEB</li>
+          <li class="filter">REACT</li>
+        </ol>
+        <div class="float-bar">
           <ol class="flex row">
             <li class="filter">ALL</li>
-            <li class="filter">UNITY</li>
+            <li class="filter" >UNITY</li>
             <li class="filter">VANILLA WEB</li>
             <li class="filter">REACT</li>
           </ol>
-          <div class="float-bar">
-            <ol class="flex row">
-              <li class="filter">ALL</li>
-              <li class="filter" >UNITY</li>
-              <li class="filter">VANILLA WEB</li>
-              <li class="filter">REACT</li>
-            </ol>
-          </div>
         </div>
+      </div>
 
-        <div id="gallery" class="container flex row wrap"></div>
-      </section>
+      <div id="gallery" class="container flex row wrap"></div>
+    </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="section">
-        <div class="container flex">
-          <h1 class="header">CONTACT</h1>
-          <div class="header-bar"></div>
-          <div class="highlight">
-            Have a question or want to work together?
-          </div>
-          <form id="contact-form">
-            <input placeholder="Name" type="text" name="name" onkeydown="return event.key != 'Enter';" required />
-            <input placeholder="Enter email" type="email" name="email" onkeydown="return event.key != 'Enter';" required />
-            <textarea placeholder="Your Message" type="text" name="message"></textarea>
-            <div id="success">
-              <div>
-                Thanks for reaching out,
-                <br />
-                I'll get back to you as soon as I can!<span>
-                  <button id="close">x</button>
-                </span>
-              </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container flex">
+        <h1 class="header">CONTACT</h1>
+        <div class="header-bar"></div>
+        <div class="highlight">
+          Have a question or want to work together?
+        </div>
+        <form id="contact-form">
+          <input placeholder="Name" type="text" name="name" onkeydown="return event.key != 'Enter';" required />
+          <input placeholder="Enter email" type="email" name="email" onkeydown="return event.key != 'Enter';" required />
+          <textarea placeholder="Your Message" type="text" name="message"></textarea>
+          <div id="success">
+            <div>
+              Thanks for reaching out,
+              <br />
+              I'll get back to you as soon as I can!<span>
+                <button id="close">x</button>
+              </span>
             </div>
-            <button class="button" type="button" id="contact-submit" onClick="handleFormSubmit('contact-submit')">SUBMIT</button>
-          </form>
-        </div>
-      </section>
-    </body>
+          </div>
+          <button class="button" type="button" id="contact-submit" onClick="handleFormSubmit('contact-submit')">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+  </body>
 </html>
