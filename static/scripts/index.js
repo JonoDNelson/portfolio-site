@@ -1,51 +1,45 @@
-/*
-   TODO: 
-   * Throttle onScroll
-   * CONTACT FORM
-*/
 /*======== Static Variables ==========*/
 // For sticky nav
-var navbar = document.getElementById("navbar");
-const fromTopOffsetBuffer = 25;
-var stickyNavLoc = navbar.offsetTop;
+var navBar = document.getElementById("navbar");
 // For highlighting nav links
-let navLinks = document.querySelectorAll("nav ul li a");
 let sections = Array.from(document.getElementsByClassName("section"));
+const navLinksMap = new Map();
+document.querySelectorAll("nav ul li a").forEach(link => {navLinksMap.set(link.hash, link)});
 
 // For slides navigation
 var slideIndex = 0;
 var slides = Array.from(document.getElementsByClassName("slide"));
 var dots = Array.from(document.getElementsByClassName("dot"));
 
-/*======== onScroll Functionality ==========*/
-window.onscroll = function() {
+/*======== stickyNav Functionality ==========*/
+const navObserver = new IntersectionObserver((entries, navObserver) => {
+  if(!entries[0].isIntersecting)
+    navBar.classList.add("sticky");
+  else
+    navBar.classList.remove("sticky");
+});
+navObserver.observe(document.getElementById("nav-sentinel"));
 
-  // For sticky nav
-  // Add sticky class to the navbar when you reach its scroll position.
-  // Remove "sticky" when you leave the scroll position
-  if (window.pageYOffset >= stickyNavLoc) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-
-  // For highlighting nav links
-  let fromTop = window.scrollY + fromTopOffsetBuffer;
-  let el = document.querySelector('nav .active')
-  if(el) {
-    el.classList.remove('active');
-  }
-  
-  if(fromTop < sections[1].offsetTop) {
-    navLinks[0].classList.add('active');
-  } else if (fromTop < sections[2].offsetTop) {
-    navLinks[1].classList.add('active');
-  } else if (fromTop < sections[3].offsetTop) {
-    navLinks[2].classList.add('active');
-  } else {
-      navLinks[3].classList.add('active');
-  }
-}
+/*======== Nav Link Highlighting Functionality ==========*/
+const sectionsObserver = new IntersectionObserver((entries, sectionsObserver) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      let link = navLinksMap.get("#" + entry.target.id);
+      if(link) {
+        // Remove active from current active link
+        let el = document.querySelector("nav .active")
+        if(el)
+          el.classList.remove("active");
+        // Add active to intersecting link
+        link.classList.add("active");
+        return;
+      }
+    }
+  });
+}, {rootMargin: "0% 0% -75% 0%"});
+sections.forEach(section => {
+  sectionsObserver.observe(section);
+})
 
 /*======== #About Slideshow Functionality ==========*/
 function showSlide(n) {
@@ -68,10 +62,10 @@ async function handleFormSubmit(id) {
   var url;
 
   switch(id) {
-    case 'contact-submit':
+    case "contact-submit":
     default:
       form = document.getElementById("contact-form");
-      url = 'https://jonodnelson-portfolio.herokuapp.com/contact';
+      url = "https://jonodnelson-portfolio.herokuapp.com/contact";
   }
 
   if(form.reportValidity()) {
@@ -90,7 +84,7 @@ async function postJSON( url, data ) {
   const dataJSON = JSON.stringify(dataObj);
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json"
