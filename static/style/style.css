@@ -43,6 +43,8 @@
   --section-bg-color: white;
   --section-bg-alt-color: #f3f3f3;
   --contact-placeholder-color: #d0d0d0;
+  --success-color: #04c986;
+  --failure-color: #ff0000;
 
   scroll-behavior: smooth;
 }
@@ -73,11 +75,47 @@ body {
   font-size: 13pt;
   padding: 10px 20px;
   transition: all 0.5s;
+  background: transparent;
+  color: white;
 }
 .button:hover {
   background-color: var(--button-color);
   border-color: var(--button-color);
 }
+:is(.button-loading, .button-failure) .button-text {
+  visibility: hidden;
+  opacity: 0;
+}
+.button-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+.button-failure {
+  background: var(--failure-color);
+}
+/* Hide button on successful form submit to
+ * help prevent spam
+ */
+.button-success {
+  display: none;
+}
+
+@keyframes button-loading-spinner {
+  from { transform: rotate(0turn); }
+  to   { transform: rotate(1turn); }
+}
+
 .bold {
   font-weight: 700;
 }
@@ -416,41 +454,36 @@ section .flex-50-gt-sm {
   min-height: 150px;
 }
  #contact .button {
-  background: transparent;
-  color: white;
   float: right;
   font-size: 12pt;
   margin: 5px 0 0 0;
   outline: 0;
   padding: 10px 30px;
+  position: relative;
 }
  #contact .button:hover {
   background: var(--button-color);
 }
- #contact #success {
-  height: 0;
+ #contact-success, #contact-failure {
+  /* height: 0; */
   overflow: hidden;
   position: relative;
   width: 100%;
 }
- #contact #success.expand {
-  height: 36px;
+ :is(#contact-success, #contact-failure).expand{
+  height: auto;
 }
- #contact #success div {
-  background: #04c986;
-  border: 1px solid #157c59;
-  color: #157051;
-  font-size: 10pt;
+ #contact-success div {
+  background: var(--success-color);
+  color: white;
   font-weight: 600;
   padding: 5px 0;
 }
- #contact #close {
-  cursor: pointer;
-  font-size: 12pt;
+#contact-failure div {
+  background: var(--success-color);
+  color: white;
   font-weight: 600;
-  padding: 5px 15px;
-  position: absolute;
-  right: 0;
+  padding: 5px 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -515,16 +548,6 @@ section .flex-50-gt-sm {
   /* ========= CONTACT ========= */
   #contact {
     padding: 130px 0 180px 0;
-  }
-  #contact .label {
-    font-size: 16pt;
-    line-height: 22pt;
-  }
-  #contact .date {
-    font-size: 8.5pt;
-  }
-  #contact .bar {
-    margin: 15px 0px;
   }
   #contact .text {
     font-size: 11pt;

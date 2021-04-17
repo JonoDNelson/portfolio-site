@@ -57,25 +57,43 @@ function nextSlide(n) {
 }
 
 /*======== Form Submissions ==========*/
-async function handleFormSubmit(id) {
+async function handleFormSubmit(buttonID) {
   var form;
   var url;
+  var button = document.getElementById(buttonID);
 
-  switch(id) {
+  switch(buttonID) {
     case "contact-submit":
     default:
       form = document.getElementById("contact-form");
-      url = "https://jonodnelson-portfolio.herokuapp.com/contact";
+      url = "http://localhost:5000/contact"; // https://jonodnelson-portfolio.herokuapp.com/contact";
   }
 
   if(form.reportValidity()) {
     try {
+      button.classList.toggle("button-loading");
       const responseData = await postJSON( url, new FormData(form) );
-      // Show success w/submit button here.
+      button.classList.toggle("button-success");
+      displayExtraSuccess(buttonID);
       console.log({ responseData });
     } catch (error) {
+      button.classList.toggle("button-failure");
       console.error(error);
     }
+    button.classList.toggle("button-loading");
+  }
+}
+
+function displayExtraSuccess(buttonID) {
+  switch(buttonID) {
+    case "contact-submit":
+      let el = document.getElementById("contact-success");
+      if(el) {
+        console.log("we here?")
+        el.classList.toggle("expand");
+      }
+        
+      break;
   }
 }
   
