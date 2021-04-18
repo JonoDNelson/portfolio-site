@@ -1,15 +1,17 @@
 /*======== Static Variables ==========*/
+// Timings for displaying success/failure
+const messageTime = 8000;
 // For sticky nav
-var navBar = document.getElementById("navbar");
+const navBar = document.getElementById("navbar");
 // For highlighting nav links
-let sections = Array.from(document.getElementsByClassName("section"));
+const sections = Array.from(document.getElementsByClassName("section"));
 const navLinksMap = new Map();
 document.querySelectorAll("nav ul li a").forEach(link => {navLinksMap.set(link.hash, link)});
 
 // For slides navigation
 var slideIndex = 0;
-var slides = Array.from(document.getElementsByClassName("slide"));
-var dots = Array.from(document.getElementsByClassName("dot"));
+const slides = Array.from(document.getElementsByClassName("slide"));
+const dots = Array.from(document.getElementsByClassName("dot"));
 
 /*======== stickyNav Functionality ==========*/
 const navObserver = new IntersectionObserver((entries, navObserver) => {
@@ -57,6 +59,7 @@ function nextSlide(n) {
 }
 
 /*======== Form Submissions ==========*/
+// Actually submitting the form
 async function handleFormSubmit(buttonID) {
   var form;
   var url;
@@ -66,37 +69,24 @@ async function handleFormSubmit(buttonID) {
     case "contact-submit":
     default:
       form = document.getElementById("contact-form");
-      url = "http://localhost:5000/contact"; // https://jonodnelson-portfolio.herokuapp.com/contact";
+      url = "https://jonodnelson-portfolio.herokuapp.com/contact"; //"http://localhost:5000/contact"; //
   }
 
   if(form.reportValidity()) {
     try {
       button.classList.toggle("button-loading");
       const responseData = await postJSON( url, new FormData(form) );
-      button.classList.toggle("button-success");
-      displayExtraSuccess(buttonID);
+      displayOutcome(button, "success");
       console.log({ responseData });
     } catch (error) {
-      button.classList.toggle("button-failure");
+      displayOutcome(button, "failure");
       console.error(error);
     }
     button.classList.toggle("button-loading");
   }
 }
 
-function displayExtraSuccess(buttonID) {
-  switch(buttonID) {
-    case "contact-submit":
-      let el = document.getElementById("contact-success");
-      if(el) {
-        console.log("we here?")
-        el.classList.toggle("expand");
-      }
-        
-      break;
-  }
-}
-  
+// Sending the form data
 async function postJSON( url, data ) {
   const dataObj = Object.fromEntries(data);
   const dataJSON = JSON.stringify(dataObj);
@@ -117,4 +107,19 @@ async function postJSON( url, data ) {
   }
 
   return await response.json();
+}
+
+// Button/div success states
+function displayOutcome(button, outcome) {
+  button.classList.toggle("button-" + outcome);
+  switch(button.id) {
+    case "contact-submit": default:
+      let el = document.getElementById("contact-" + outcome);
+      if(el) {
+        el.classList.toggle("expand");
+        setTimeout(function(){el.classList.toggle("expand"); }, messageTime);
+      }
+      break;
+  }
+  setTimeout(function(){button.classList.toggle("button-" + outcome); }, messageTime);
 }

@@ -101,14 +101,22 @@ body {
   border-radius: 50%;
   animation: button-loading-spinner 1s ease infinite;
 }
-.button-failure {
+/* .button-failure {
   background: var(--failure-color);
+  border-color: var(--failure-color);
 }
-/* Hide button on successful form submit to
- * help prevent spam
+.button-failure:hover {
+  background: var(--highlight-color);
+  border-color: var(--highlight-color);
+  color: var(--nav-color);
+} */
+/* Hide button on any form submit to
+ * help prevent spam (and while I figure out
+ * what to do with the button during an error)
  */
-.button-success {
-  display: none;
+.button-success, .button-failure {
+  visibility: hidden;
+  opacity: 0;
 }
 
 @keyframes button-loading-spinner {
@@ -461,29 +469,27 @@ section .flex-50-gt-sm {
   padding: 10px 30px;
   position: relative;
 }
- #contact .button:hover {
-  background: var(--button-color);
-}
  #contact-success, #contact-failure {
-  /* height: 0; */
+  max-height: 0;
   overflow: hidden;
   position: relative;
   width: 100%;
+  transition: all 0.5s;
 }
- :is(#contact-success, #contact-failure).expand{
+ :is(#contact-success, #contact-failure).expand {
+  max-height: 4rem;
   height: auto;
 }
- #contact-success div {
-  background: var(--success-color);
+ :is(#contact-success, #contact-failure)div {
   color: white;
   font-weight: 600;
   padding: 5px 0;
 }
-#contact-failure div {
+#contact-success div {
   background: var(--success-color);
-  color: white;
-  font-weight: 600;
-  padding: 5px 0;
+}
+#contact-failure div {
+  background: var(--failure-color);
 }
 
 @media screen and (min-width: 600px) {
