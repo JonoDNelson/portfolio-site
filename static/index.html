@@ -199,17 +199,24 @@
         <form id="contact-form">
           <input placeholder="Name" type="text" name="name" onkeydown="return event.key != 'Enter';" required />
           <input placeholder="Enter email" type="email" name="email" onkeydown="return event.key != 'Enter';" required />
-          <textarea placeholder="Your Message" type="text" name="message"></textarea>
-          <div id="success">
+          <textarea maxlength="500" placeholder="Your Message" type="text" name="message"></textarea>
+          <div id="contact-success">
             <div>
               Thanks for reaching out,
               <br />
-              I'll get back to you as soon as I can!<span>
-                <button id="close">x</button>
-              </span>
+              I'll get back to you ASAP!
             </div>
           </div>
-          <button class="button" type="button" id="contact-submit" onClick="handleFormSubmit('contact-submit')">SUBMIT</button>
+          <div id="contact-failure">
+            <div>
+              It didn't work!
+              <br />
+              Please try again later. (Sorry!)
+            </div>
+          </div>
+          <button class="button" type="button" id="contact-submit" onClick="handleFormSubmit('contact-submit')">
+            <span class="button-text">SUBMIT</span>
+          </button>
         </form>
       </div>
     </section>
