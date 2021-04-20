@@ -69,9 +69,10 @@ async function handleFormSubmit(buttonID) {
     case "contact-submit":
     default:
       form = document.getElementById("contact-form");
-      url = "https://jonodnelson-portfolio.herokuapp.com/contact"; //"http://localhost:5000/contact"; //
+      url = "https://jonodnelson-portfolio.herokuapp.com/contact";
   }
 
+  // Don't submit if the form is invalid
   if(form.reportValidity()) {
     try {
       button.classList.toggle("button-loading");
