@@ -101,15 +101,6 @@ body {
   border-radius: 50%;
   animation: button-loading-spinner 1s ease infinite;
 }
-/* .button-failure {
-  background: var(--failure-color);
-  border-color: var(--failure-color);
-}
-.button-failure:hover {
-  background: var(--highlight-color);
-  border-color: var(--highlight-color);
-  color: var(--nav-color);
-} */
 /* Hide button on any form submit to
  * help prevent spam (and while I figure out
  * what to do with the button during an error)
