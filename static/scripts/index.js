@@ -19,7 +19,7 @@ const navObserver = new IntersectionObserver((entries, navObserver) => {
     navBar.classList.add("sticky");
   else
     navBar.classList.remove("sticky");
-});
+},{threshold: 1});
 navObserver.observe(document.getElementById("nav-sentinel"));
 
 /*======== Nav Link Highlighting Functionality ==========*/
