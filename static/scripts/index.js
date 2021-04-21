@@ -26,14 +26,12 @@ navObserver.observe(document.getElementById("nav-sentinel"));
 const sectionsObserver = new IntersectionObserver((entries, sectionsObserver) => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      let link = navLinksMap.get("#" + entry.target.id);
-      if(link) {
-        // Remove active from current active link
-        let el = document.querySelector("nav .active")
-        if(el)
-          el.classList.remove("active");
+      let targetLink = navLinksMap.get("#" + entry.target.id);
+      if(targetLink) {
+        // Remove active from all nav links
+        navLinksMap.forEach(navLink => {navLink.classList.remove("active")});
         // Add active to intersecting link
-        link.classList.add("active");
+        targetLink.classList.add("active");
         return;
       }
     }
