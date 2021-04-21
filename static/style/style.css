@@ -479,7 +479,7 @@ section .flex-50-gt-sm {
   background: var(--failure-color);
 }
 
-@media (hover:hover) {
+@media (hover: hover) and (pointer: fine){
   #about .slideshow-container button:hover {
     background-color: rgba(0,0,0,0.6);
     color: white;

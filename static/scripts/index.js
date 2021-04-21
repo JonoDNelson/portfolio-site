@@ -38,7 +38,7 @@ const sectionsObserver = new IntersectionObserver((entries, sectionsObserver) =>
       }
     }
   });
-}, {rootMargin: "0% 0% -75% 0%"});
+}, {rootMargin: "-10% 0% -75% 0%"});
 sections.forEach(section => {
   sectionsObserver.observe(section);
 })
