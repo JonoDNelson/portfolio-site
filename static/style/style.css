@@ -84,10 +84,6 @@ a {
   background: transparent;
   color: white;
 }
-.button:hover {
-  background-color: var(--button-color);
-  border-color: var(--button-color);
-}
 :is(.button-loading, .button-failure) .button-text {
   visibility: hidden;
   opacity: 0;
@@ -191,9 +187,6 @@ nav a {
   display: inline;
   font-size: initial;
   margin: 0 20px;
-}
-nav a:hover {
-  color: var(--highlight-color);
 }
 nav .active {
   color: var(--highlight-color);
@@ -305,10 +298,6 @@ section .flex-50-gt-sm {
   user-select: none;
   background: transparent; 
 }
-#about .slideshow-container button:hover {
-  background-color: rgba(0,0,0,0.6);
-  color: white;
-}
 #about .slideshow-container :is(button:active, button:focus) {
   outline: none;
 }
@@ -326,7 +315,7 @@ section .flex-50-gt-sm {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-#about .dot-wrapper :is(.active, .dot:hover) {
+#about .dot-wrapper .active {
   background-color: #717171;
 }
 #about .bars-wrap {
@@ -488,6 +477,23 @@ section .flex-50-gt-sm {
 }
 #contact-failure div {
   background: var(--failure-color);
+}
+
+@media (hover:hover) {
+  #about .slideshow-container button:hover {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+  }
+  nav a:hover {
+    color: var(--highlight-color);
+  }
+  .button:hover {
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+  }
+  #about .dot-wrapper .dot:hover {
+    background-color: #717171;
+  }
 }
 
 @media screen and (min-width: 600px) {
