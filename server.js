@@ -22,6 +22,13 @@ const limiter = new rateLimit({
 
 /*======== Instantiate the express app ========*/
 const app = express();
+// Force HTTPS redirect on production
+app.use(function(req, res, next) {
+  if (req.headers['x-forwarded-proto'] === 'https' && !isDev) // Already https or localhost
+    next();
+  else // Redirect to https.
+    res.redirect('https://' + req.headers.host + req.url);
+});
 // Serve the static stuff
 app.use("/", express.static(process.cwd() + "/static"));
 // Configure the body parser for requests (only accept JSON)
