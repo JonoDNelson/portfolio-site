@@ -2,6 +2,7 @@
   "name": "jonodnelson-portfolio-site",
   "version": "0.1.0",
   "description": "Simple portfolio site with a nodemailer contact form",
+  "license": "MIT",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no tests written\" && exit 1",
