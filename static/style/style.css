@@ -322,31 +322,28 @@ section .flex-50-gt-sm {
   width: calc(100% - 15px);
 }
 #about .bar {
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--section-bg-alt-color);
   color: #666666;
   font-size: 7pt;
   height: 22px;
-  margin: 0 0 12px 0;
-  position: relative;
+  margin: 0 auto 12px;
+  flex-direction: row;
+  flex-grow: 1;
 }
-#about .bar span {
-  display: none;
-  padding: 0 15px 0 0;
-  z-index: 1;
+#about .bar .bar-percent {
+  padding: 0 1em;
+  margin-left: auto;
+  z-index: 100;
 }
 #about .bar .fill {
-  position: absolute;
-  left: 0;
-  top: 0;
   background-color: var(--button-dark-color);
   opacity: 1;
   padding: 0;
+  height: 100%;
 }
 #about .bar .tag {
-  position: absolute;
-  left: 0;
-  top: 0;
   background-color: var(--button-color);
   color: white;
   height: 100%;
@@ -527,9 +524,6 @@ section .flex-50-gt-sm {
     height: 28px;
     margin: 0 0 15px 0;
   }
-  #about .bar span {
-    display: initial;
-  }
   #about .bar .tag {
     width: 110px;
   }
@@ -578,12 +572,10 @@ section .flex-50-gt-sm {
   }
   #about .bar {
     height: 40px;
+    max-width: 90%;
   }
   #about .about-columns {
     margin: 18px 0 0 0;
-  }
-  #about .bar {
-    max-width: 90%;
   }
 
   /* ========= PORTFOLIO ========= */
