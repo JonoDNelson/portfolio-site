@@ -38,37 +38,34 @@
       <div class="container flex">
         <h1 class="header">ABOUT</h1>
         <div class="header-bar"></div>
-        <div class="skills-wrapper flex row-gt-sm">
+        <!-- About content wrapper -->
+        <div class="about-columns flex row-gt-sm">
+          <!-- Slideshow and Summary wrapper -->
           <div class="flex flex-50-gt-sm">
             <!-- Slideshow container -->
-            <div class="slideshow-container">
+            <div class="slideshow-wrapper">
               <!-- Full-width images with caption text -->
               <div class="slide fade">
                 <img src="assets/images/Iceland.webp">
                 <div class="text">Iceland</div>
               </div>
-
               <div class="slide fade">
                 <img src="assets/images/Paris.webp">
                 <div class="text">Paris</div>
               </div>
-
               <div class="slide fade">
                 <img src="assets/images/Orkney.webp">
                 <div class="text">Orkney</div>
               </div>
-
               <div class="slide fade">
                 <img src="assets/images/Errol.webp">
                 <div class="text">Errol</div>
               </div>
-
               <!-- Next and previous buttons -->
               <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
               <button class="next" onclick="nextSlide(1)">&#10095;</button>
             </div>
             <br>
-
             <!-- The dots/circles -->
             <div class="dot-wrapper">
               <span class="dot active" onclick="showSlide(0)"></span>
@@ -76,6 +73,8 @@
               <span class="dot" onclick="showSlide(2)"></span>
               <span class="dot" onclick="showSlide(3)"></span>
             </div>
+            
+            <!-- Autobiographical blurb -->
             <div class="label bold">Who am I?</div>
             <div>
               I'm a software developer who loves to travel
@@ -89,7 +88,8 @@
               <a href="#contact" class="page-link highlight">Let's make something cool.</a>
             </div>
           </div>
-      
+
+          <!-- Skill bars container -->
           <div class="flex flex-50-gt-sm bars-wrap">
             <div class="bar flex">
               <div class="bar fill" style="width:90%">
@@ -97,63 +97,54 @@
               </div>
               <span>90%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:90%">
                 <div class="tag bold flex">HTML</div>
               </div>
               <span>90%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:80%">
                 <div class="tag bold flex">Vue</div>
               </div>
               <span>80%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:80%">
                 <div class="tag bold flex">JavaScript</div>
               </div>
               <span>80%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:50%">
                 <div class="tag bold flex">React</div>
               </div>
               <span>50%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:65%">
                 <div class="tag bold flex">Node.js</div>
               </div>
               <span>65%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:65%">
                 <div class="tag bold flex">Unity</div>
               </div>
               <span>65%</span>
             </div>
-      
             <div class="bar flex">
               <div class="bar fill" style="width:50%">
                 <div class="tag bold flex">MongoDB</div>
               </div>
               <span>50%</span>
-            </div>
-      
+            </div> 
             <div class="bar flex">
               <div class="bar fill" style="width:60%">
                 <div class="tag bold flex">Go</div>
               </div>
               <span>60%</span>
-            </div>
-      
+            </div> 
             <div class="bar flex">
               <div class="bar fill" style="width:50%">
                 <div class="tag bold flex">Sketch</div>
