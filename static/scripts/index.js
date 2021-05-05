@@ -15,7 +15,7 @@ const dots = Array.from(document.getElementsByClassName("dot"));
 
 /*======== stickyNav Functionality ==========*/
 const navObserver = new IntersectionObserver((entries, navObserver) => {
-  if(!entries[0].isIntersecting)
+  if(!entries[0].isIntersecting && window.scrollY >= 25)
     navBar.classList.add("sticky");
   else
     navBar.classList.remove("sticky");
