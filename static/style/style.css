@@ -37,8 +37,8 @@
 
 :root {
   --nav-color: #1b242f;
-  --highlight-color:#ffaa11;
-  --button-color:#01a2ff;
+  --highlight-color: #ffaa11;
+  --button-color: #01a2ff;
   --button-dark-color: #0279c9;
   --section-bg-color: white;
   --section-bg-alt-color: #f3f3f3;
@@ -100,7 +100,7 @@ a {
   bottom: 0;
   margin: auto;
   border: 4px solid transparent;
-  border-top-color: #ffffff;
+  border-top-color: white;
   border-radius: 50%;
   animation: button-loading-spinner 1s ease infinite;
 }
