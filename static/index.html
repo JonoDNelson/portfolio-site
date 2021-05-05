@@ -13,13 +13,9 @@
   <body>
     <!-- HOME -->
     <section id="home" class="flex height-fit section">
-      <div class="text">
-        Hello, I'm <span class="highlight">Jono Nelson</span>:
-        <br />
-        Full-Stack Web Developer.
-        <br />
-        Unity Game Developer.
-      </div>
+      <div class="text"> Hello, I'm <span class="highlight">Jono Nelson</span>:</div>
+      <div class="text">Software, Full-Stack Web, and Unity</div>
+      <div class="text"><span class="highlight">Developer</span>.</div>
       <a href="#about" class="button page-link">Learn more</a>
     </section>
     <!-- NAV BAR -->
@@ -38,37 +34,34 @@
       <div class="container flex">
         <h1 class="header">ABOUT</h1>
         <div class="header-bar"></div>
-        <div class="skills-wrapper flex row-gt-sm">
+        <!-- About content wrapper -->
+        <div class="about-columns flex row-gt-sm">
+          <!-- Slideshow and Summary wrapper -->
           <div class="flex flex-50-gt-sm">
             <!-- Slideshow container -->
-            <div class="slideshow-container">
+            <div class="slideshow-wrapper">
               <!-- Full-width images with caption text -->
               <div class="slide fade">
                 <img src="assets/images/Iceland.webp">
                 <div class="text">Iceland</div>
               </div>
-
               <div class="slide fade">
                 <img src="assets/images/Paris.webp">
                 <div class="text">Paris</div>
               </div>
-
               <div class="slide fade">
                 <img src="assets/images/Orkney.webp">
                 <div class="text">Orkney</div>
               </div>
-
               <div class="slide fade">
                 <img src="assets/images/Errol.webp">
                 <div class="text">Errol</div>
               </div>
-
               <!-- Next and previous buttons -->
               <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
               <button class="next" onclick="nextSlide(1)">&#10095;</button>
             </div>
             <br>
-
             <!-- The dots/circles -->
             <div class="dot-wrapper">
               <span class="dot active" onclick="showSlide(0)"></span>
@@ -76,90 +69,76 @@
               <span class="dot" onclick="showSlide(2)"></span>
               <span class="dot" onclick="showSlide(3)"></span>
             </div>
+            
+            <!-- Autobiographical blurb -->
             <div class="label bold">Who am I?</div>
             <div>
-              I'm a software developer who loves to travel
+              I'm a Canadian software developer happy to be working at <span><a href="https://www.pureweb.com/" target="_blank" class="highlight">Pure Web</a></span>!
               <br />
-              and quit my job to move to Scotland just before the pandemic.
+              I'm home in Canada now, but can't wait until I can travel again!
               <br />
-              I'm back home in Canada now, and want to get back to work!
-              <br />
-              I'm a keen learner and take pride in my projects (whatever they may be)!
+              I'm a keen learner and take pride in creating and maintaining.
               <br />
               <a href="#contact" class="page-link highlight">Let's make something cool.</a>
             </div>
           </div>
-      
-          <div class="flex flex-50-gt-sm bars-wrap">
+
+          <!-- Skill bars container -->
+          <div class="flex flex-50-gt-sm bars-wrapper">
             <div class="bar flex">
-              <div class="bar fill" style="width:90%">
+              <div class="fill" style="width:85%">
                 <div class="tag bold flex">C++</div>
               </div>
-              <span>90%</span>
+              <div class="bar-percent">85%</div>
             </div>
-      
             <div class="bar flex">
-              <div class="bar fill" style="width:90%">
-                <div class="tag bold flex">HTML</div>
-              </div>
-              <span>90%</span>
-            </div>
-      
-            <div class="bar flex">
-              <div class="bar fill" style="width:80%">
-                <div class="tag bold flex">Vue</div>
-              </div>
-              <span>80%</span>
-            </div>
-      
-            <div class="bar flex">
-              <div class="bar fill" style="width:80%">
-                <div class="tag bold flex">JavaScript</div>
-              </div>
-              <span>80%</span>
-            </div>
-      
-            <div class="bar flex">
-              <div class="bar fill" style="width:50%">
-                <div class="tag bold flex">React</div>
-              </div>
-              <span>50%</span>
-            </div>
-      
-            <div class="bar flex">
-              <div class="bar fill" style="width:65%">
-                <div class="tag bold flex">Node.js</div>
-              </div>
-              <span>65%</span>
-            </div>
-      
-            <div class="bar flex">
-              <div class="bar fill" style="width:65%">
+              <div class="fill" style="width:40%">
                 <div class="tag bold flex">Unity</div>
               </div>
-              <span>65%</span>
+              <div class="bar-percent">40%</div>
             </div>
-      
             <div class="bar flex">
-              <div class="bar fill" style="width:50%">
+              <div class="fill" style="width:85%">
+                <div class="tag bold flex">HTML</div>
+              </div>
+              <div class="bar-percent">85%</div>
+            </div>
+            <div class="bar flex">
+              <div class="fill" style="width:70%">
+                <div class="tag bold flex">JavaScript</div>
+              </div>
+              <div class="bar-percent">70%</div>
+            </div>
+            <div class="bar flex">
+              <div class="fill" style="width:70%">
+                <div class="tag bold flex">CSS</div>
+              </div>
+              <div class="bar-percent">70%</div>
+            </div>
+            <div class="bar flex">
+              <div class="fill" style="width:60%">
+                <div class="tag bold flex">Vue</div>
+              </div>
+              <div class="bar-percent">60%</div>
+            </div>
+            <div class="bar flex">
+              <div class="fill" style="width:65%">
+                <div class="tag bold flex">Node.js</div>
+              </div>
+              <div class="bar-percent">65%</div>
+            </div>
+            <div class="bar flex">
+              <div class="fill" style="width:45%">
                 <div class="tag bold flex">MongoDB</div>
               </div>
-              <span>50%</span>
-            </div>
-      
+              <div class="bar-percent">45%</div>
+            </div> 
             <div class="bar flex">
-              <div class="bar fill" style="width:60%">
+              <div class="fill" style="width:55%">
                 <div class="tag bold flex">Go</div>
               </div>
-              <span>60%</span>
-            </div>
-      
-            <div class="bar flex">
-              <div class="bar fill" style="width:50%">
-                <div class="tag bold flex">Sketch</div>
-              </div>
-              <span>50%</span>
-            </div>
+              <div class="bar-percent">55%</div>
+            </div> 
           </div>
         </div>
       </div>

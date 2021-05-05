@@ -37,8 +37,8 @@
 
 :root {
   --nav-color: #1b242f;
-  --highlight-color:#ffaa11;
-  --button-color:#01a2ff;
+  --highlight-color: #ffaa11;
+  --button-color: #01a2ff;
   --button-dark-color: #0279c9;
   --section-bg-color: white;
   --section-bg-alt-color: #f3f3f3;
@@ -100,7 +100,7 @@ a {
   bottom: 0;
   margin: auto;
   border: 4px solid transparent;
-  border-top-color: #ffffff;
+  border-top-color: white;
   border-radius: 50%;
   animation: button-loading-spinner 1s ease infinite;
 }
@@ -241,35 +241,32 @@ section .flex-50-gt-sm {
 }
 
 /* ======== ABOUT ======== */
-#about .label-wrap .label {
-  margin: 20px 0 10px 0;
-}
 #about .highlight {
   color: var(--button-color);
 }
-#about .skills-wrapper {
+#about .about-columns {
   align-items: flex-start;
   width: 100%;
 }
-#about .skills-wrapper .label {
+#about .about-columns .label {
   margin: 20px 0 15px 0;
 }
-#about .slideshow-container {
+#about .slideshow-wrapper {
   width: 100%;
   position: relative;
 }
-#about .slideshow-container .slide{
+#about .slideshow-wrapper .slide{
   display: none;
   justify-content: center;
 }
-#about .slideshow-container .slide:first-of-type {
+#about .slideshow-wrapper .slide:first-of-type {
   display:flex;
 }
-#about .slideshow-container .slide img{
+#about .slideshow-wrapper .slide img{
   width:100%;
 }
 /* Caption text */
-#about .slideshow-container .slide .text{
+#about .slideshow-wrapper .slide .text{
   width:60%;
   color: #f2f2f2;
   font-size: inherit;
@@ -278,13 +275,13 @@ section .flex-50-gt-sm {
   bottom: 8px;
 }
 /* Next & previous buttons */
-#about .slideshow-container .prev {
+#about .slideshow-wrapper .prev {
   left: 0;
 }
-#about .slideshow-container .next {
+#about .slideshow-wrapper .next {
   right: 0;
 }
-#about .slideshow-container button {
+#about .slideshow-wrapper button {
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -299,7 +296,7 @@ section .flex-50-gt-sm {
   user-select: none;
   background: transparent; 
 }
-#about .slideshow-container :is(button:active, button:focus) {
+#about .slideshow-wrapper :is(button:active, button:focus) {
   outline: none;
 }
 /* The dots/bullets/indicators */
@@ -319,37 +316,34 @@ section .flex-50-gt-sm {
 #about .dot-wrapper .active {
   background-color: #717171;
 }
-#about .bars-wrap {
+#about .bars-wrapper {
   margin: 40px auto 0 auto;
   max-width: 90%;
   width: calc(100% - 15px);
 }
 #about .bar {
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--section-bg-alt-color);
   color: #666666;
   font-size: 7pt;
   height: 22px;
-  margin: 0 0 12px 0;
-  position: relative;
+  margin: 0 auto 12px;
+  flex-direction: row;
+  flex-grow: 1;
 }
-#about .bar span {
-  display: none;
-  padding: 0 15px 0 0;
-  z-index: 1;
+#about .bar .bar-percent {
+  padding: 0 1em;
+  margin-left: auto;
+  z-index: 100;
 }
 #about .bar .fill {
-  position: absolute;
-  left: 0;
-  top: 0;
   background-color: var(--button-dark-color);
   opacity: 1;
   padding: 0;
+  height: 100%;
 }
 #about .bar .tag {
-  position: absolute;
-  left: 0;
-  top: 0;
   background-color: var(--button-color);
   color: white;
   height: 100%;
@@ -478,7 +472,7 @@ section .flex-50-gt-sm {
 }
 
 @media (hover: hover) and (pointer: fine){
-  #about .slideshow-container button:hover {
+  #about .slideshow-wrapper button:hover {
     background-color: rgba(0,0,0,0.6);
     color: white;
   }
@@ -522,22 +516,13 @@ section .flex-50-gt-sm {
   }
 
   /* ========= ABOUT ========= */
-  #about .label-wrap .label {
-    margin: 15px 0 5px 0;
-  }
-  #about .label-wrap > div {
-    margin: 0 15px;
-  }
-  #about .skills-wrapper > .flex:first-child {
+  #about .about-columns > .flex:first-child {
     margin: 0 50px;
   }
   #about .bar {
     font-size: 11pt;
     height: 28px;
     margin: 0 0 15px 0;
-  }
-  #about .bar span {
-    display: initial;
   }
   #about .bar .tag {
     width: 110px;
@@ -582,17 +567,15 @@ section .flex-50-gt-sm {
   }
 
 /* ========= ABOUT ========= */
-  #about .bars-wrap {
+  #about .bars-wrapper {
     margin: 0;
   }
   #about .bar {
     height: 40px;
-  }
-  #about .skills-wrapper {
-    margin: 18px 0 0 0;
-  }
-  #about .bar {
     max-width: 90%;
+  }
+  #about .about-columns {
+    margin: 18px 0 0 0;
   }
 
   /* ========= PORTFOLIO ========= */
