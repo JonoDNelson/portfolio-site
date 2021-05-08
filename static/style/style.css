@@ -140,15 +140,15 @@ a {
 .header {
   color: #444649;
   font-weight: 700;
-  font-size: 25pt;
-  position: relative;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
   position: relative;
 }
 .header-bar {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
   background: #444649;
   height: 4px;
-  margin: 25px 0 40px 0;
-  width: 70px;
+  margin: .5em 0 1em 0;
+  width: 5.5ch;
 }
 .label {
   font-size: 14pt;
@@ -234,18 +234,16 @@ section .flex-50-gt-sm {
   flex-shrink: 1;
   flex-direction: column;
   line-height: normal;
-  /* font-size: 5vmax; */
 }
 
 #home .text {
   line-height: 1.6em;
   margin: 0 0 20px 0;
   pointer-events: none;
-  z-index: 1;
   font-size: clamp(1rem, 2.8vw, 2.8rem);
 }
 #home .button {
-  font-size: clamp(1rem, 2.2vw, 2.2rem);
+  font-size: clamp(0.8rem, 2vw, 2rem);
   padding: 0.65em .7em;
 }
 
@@ -327,8 +325,7 @@ section .flex-50-gt-sm {
 }
 #about .bars-wrapper {
   margin: 40px auto 0 auto;
-  max-width: 90%;
-  width: calc(100% - 15px);
+  width: min(100% - 15px, 90%);
 }
 #about .bar {
   justify-content: flex-start;
@@ -360,7 +357,10 @@ section .flex-50-gt-sm {
 }
 
 /* ======== PORTFOLIO ======== */
-#portfolio ol li {
+#portfolio .header-bar {
+  width: 7.5ch;
+}
+#portfolio ol {
   list-style-type: none;
 }
 #portfolio .container {
@@ -412,7 +412,7 @@ section .flex-50-gt-sm {
 }
  #contact .header-bar {
   background: white;
-  width: 110px;
+  width: 7.5ch;
 }
  #contact .highlight {
   color: var(--button-color);
@@ -504,9 +504,6 @@ section .flex-50-gt-sm {
   }
   .container {
     padding: 0 20px;
-  }
-  .header {
-    font-size: 30pt;
   }
   .label {
     font-size: 18pt;
