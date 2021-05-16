@@ -354,40 +354,26 @@ section .container {
 }
 #portfolio ol {
   list-style-type: none;
+  padding: 0;
 }
-#portfolio .filter-wrap {
+.filter-wrap {
   position: relative;
   white-space: nowrap;
 }
-#portfolio .filter {
+.filter {
   cursor: pointer;
-  font-size: 6pt;
   font-weight: 600;
-  padding: 0 20px;
+  padding: 0 1.4em;
 }
-#portfolio .float-bar {
-  bottom: 0;
-  left: 30px;
-  top: 0;
-  position: absolute;
-  background: var(--highlight-color);
-  border-radius: 1px;
-  height: 25px;
-  margin: auto 0;
-  overflow: hidden;
-}
-#portfolio .float-bar .row {
+.float-bar .row {
   bottom: 0;
   left: -30px;
   top: 0;
   position: absolute;
   margin: auto 0;
 }
-#portfolio .float-bar .row .filter {
+.float-bar .row .filter {
   color: white;
-}
-#portfolio #gallery {
-  margin: 20px 0;
 }
 
 /* ======== CONTACT ======== */
@@ -416,9 +402,9 @@ section .container {
 #contact ::-ms-input-placeholder { /* Microsoft Edge */
   color: var(--contact-placeholder-color);
 }
- #contact input[type=text],
- #contact input[type=email],
- #contact textarea {
+input[type=text],
+input[type=email],
+textarea {
   background: #1e242c;
   border: 0;
   color: white;
@@ -429,7 +415,7 @@ section .container {
   padding: .7em 1em;
   width: 100%;
 }
-#contact textarea {
+textarea {
   min-height: 15ch;
   resize: none;
 }
@@ -463,11 +449,12 @@ section .container {
   background: var(--failure-color);
 }
 
+/* ======== FOOTER ======== */
 footer {
   min-height: var(--section-padding);
 }
 
-/* Prevent hover effects on mobile */
+/* ======== Prevent hover effects on mobile ======== */
 @media (hover: hover) and (pointer: fine){
   .slideshow-wrapper button:hover {
     background-color: rgba(0,0,0,0.6);
@@ -484,6 +471,7 @@ footer {
     background-color: #717171;
   }
 }
+/* ======== Desktop-ish sized screens ======== */
 @media screen and (min-width: 800px) {
   .columns-desktop {
     flex-direction: row;
