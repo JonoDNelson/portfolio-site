@@ -192,7 +192,7 @@ nav ul {
 nav a {
   display: inline;
   font-size: initial;
-  margin: 0 20px;
+  margin: 0 1.5em;
 }
 nav .active {
   color: var(--highlight-color);
@@ -230,7 +230,7 @@ section .container {
 
 #home .text {
   line-height: 1.6em;
-  margin: 0 0 20px 0;
+  margin: 0 0 1.5em 0;
   pointer-events: none;
   font-size: clamp(1rem, 2.5vw, 2.5rem);
 }
@@ -365,16 +365,6 @@ section .container {
   font-weight: 600;
   padding: 0 1.4em;
 }
-.float-bar .row {
-  bottom: 0;
-  left: -30px;
-  top: 0;
-  position: absolute;
-  margin: auto 0;
-}
-.float-bar .row .filter {
-  color: white;
-}
 
 /* ======== CONTACT ======== */
  #contact {
@@ -388,8 +378,8 @@ section .container {
   background: white;
   width: 7.5ch;
 }
- #contact form {
-  margin: 40px auto 0 auto;
+form {
+  margin: 3em auto 0 auto;
   min-width: min(500px, 95%);
 }
 #contact ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
