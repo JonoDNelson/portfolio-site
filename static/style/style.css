@@ -208,7 +208,7 @@ section {
 section:nth-of-type(2n+3) {
   background: var(--section-bg-alt-color);
 }
-section .container {
+.container {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0;
@@ -465,7 +465,7 @@ footer {
 @media screen and (min-width: 800px) {
   .columns-desktop {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
   }
   .columns-desktop > * + * {
