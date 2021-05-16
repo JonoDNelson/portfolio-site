@@ -12,7 +12,7 @@
   </head>
   <body>
     <!-- HOME -->
-    <section id="home" class="flex section">
+    <section id="home" class="flex">
       <div class="text">
         Hello, I'm <span class="highlight">Jono Nelson</span>:
         <br>
@@ -35,14 +35,14 @@
       </ul>
     </nav>
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="flex">
       <div class="container flex">
         <h1 class="header">ABOUT</h1>
         <div class="header-bar"></div>
         <!-- About content wrapper -->
-        <div class="about-columns flex row-gt-sm">
+        <div class="columns-desktop flex">
           <!-- Slideshow and Summary wrapper -->
-          <div class="flex flex-50-gt-sm">
+          <div class="flex two-col-desktop">
             <!-- Slideshow container -->
             <div class="slideshow-wrapper">
               <!-- Full-width images with caption text -->
@@ -89,7 +89,7 @@
           </div>
 
           <!-- Skill bars container -->
-          <div class="flex flex-50-gt-sm bars-wrapper">
+          <div class="flex two-col-desktop bars-wrapper">
             <div class="bar flex">
               <div class="fill" style="width:85%">
                 <div class="tag bold flex">C++</div>
@@ -149,31 +149,33 @@
       </div>
     </section>
     <!-- PORTFOLIO -->
-    <section class="flex section" id="portfolio">
-      <h1 class="header">PORTFOLIO</h1>
-      <div class="header-bar">
-      <div class="filter-wrap">
-        <ol class="flex row">
-          <li class="filter">ALL</li>
-          <li class="filter">UNITY</li>
-          <li class="filter">VANILLA WEB</li>
-          <li class="filter">REACT</li>
-        </ol>
-        <div class="float-bar">
+    <section class="flex" id="portfolio">
+      <div class="container flex">
+        <h1 class="header">PORTFOLIO</h1>
+        <div class="header-bar">
+        <div class="filter-wrap">
           <ol class="flex row">
             <li class="filter">ALL</li>
-            <li class="filter" >UNITY</li>
+            <li class="filter">UNITY</li>
             <li class="filter">VANILLA WEB</li>
             <li class="filter">REACT</li>
           </ol>
+          <div class="float-bar">
+            <ol class="flex row">
+              <li class="filter">ALL</li>
+              <li class="filter" >UNITY</li>
+              <li class="filter">VANILLA WEB</li>
+              <li class="filter">REACT</li>
+            </ol>
+          </div>
         </div>
-      </div>
 
-      <div id="gallery" class="container flex row wrap"></div>
+        <div id="gallery" class="container flex row wrap"></div>
+      </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact">
       <div class="container flex">
         <h1 class="header">CONTACT</h1>
         <div class="header-bar"></div>
@@ -182,8 +184,8 @@
         </div>
         <form id="contact-form">
           <input placeholder="Name" type="text" name="name" onkeydown="return event.key != 'Enter';" required />
-          <input placeholder="Enter email" type="email" name="email" onkeydown="return event.key != 'Enter';" required />
-          <textarea maxlength="500" placeholder="Your Message" type="text" name="message"></textarea>
+          <input placeholder="Email" type="email" name="email" onkeydown="return event.key != 'Enter';" required />
+          <textarea placeholder="Your Message" type="text" name="message" maxlength="500"></textarea>
           <div id="contact-success">
             <div>
               Thanks for reaching out,
@@ -204,5 +206,6 @@
         </form>
       </div>
     </section>
+    <footer></footer>
   </body>
 </html>

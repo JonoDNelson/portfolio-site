@@ -4,7 +4,7 @@ const messageTime = 8000;
 // For sticky nav
 const navBar = document.getElementById("navbar");
 // For highlighting nav links
-const sections = Array.from(document.getElementsByClassName("section"));
+const sections = Array.from(document.getElementsByTagName("section"));
 const navLinksMap = new Map();
 document.querySelectorAll("nav ul li a").forEach(link => {navLinksMap.set(link.hash, link)});
 
