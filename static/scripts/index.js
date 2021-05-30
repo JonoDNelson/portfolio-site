@@ -1,4 +1,4 @@
-/*======== Static Variables ==========*/
+/*========== Static Variables ==========*/
 // Timings for displaying success/failure
 const messageTime = 8000;
 // For sticky nav
@@ -13,7 +13,22 @@ var slideIndex = 0;
 const slides = Array.from(document.getElementsByClassName("slide"));
 const dots = Array.from(document.getElementsByClassName("dot"));
 
-/*======== stickyNav Functionality ==========*/
+// For animations
+let inFromRights = Array.from(document.getElementsByClassName("slide-in-right"));
+let inFromLefts = Array.from(document.getElementsByClassName("slide-in-left"));
+
+let sliders = [...inFromLefts, ... inFromRights];
+const barChart = document.getElementById("about-bars");
+
+const animators = [...sliders, barChart];
+
+// For animating the bar chart bars simultaneously
+let barFills = Array.from(document.getElementsByClassName("fill"));
+// let barPercents = Array.from(document.getElementsByClassName("bar-percent"));
+const bars = [...barFills, ...barPercents]
+
+
+/*========== stickyNav Functionality ==========*/
 const navObserver = new IntersectionObserver((entries, navObserver) => {
   if(!entries[0].isIntersecting && window.scrollY >= 25)
     navBar.classList.add("sticky");
@@ -22,7 +37,8 @@ const navObserver = new IntersectionObserver((entries, navObserver) => {
 },{threshold: 1});
 navObserver.observe(document.getElementById("nav-sentinel"));
 
-/*======== Nav Link Highlighting Functionality ==========*/
+
+/*========== Nav Link Highlighting Functionality ==========*/
 const sectionsObserver = new IntersectionObserver((entries, sectionsObserver) => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
@@ -39,9 +55,31 @@ const sectionsObserver = new IntersectionObserver((entries, sectionsObserver) =>
 }, {rootMargin: "-10% 0% -75% 0%"});
 sections.forEach(section => {
   sectionsObserver.observe(section);
-})
+});
 
-/*======== #About Slideshow Functionality ==========*/
+
+/*========== Animations On Scroll ==========*/
+const animationsObserver = new IntersectionObserver((entries, animationsObserver) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      if(entry.target == barChart)
+        animateBarChart();
+      
+      entry.target.classList.add("animate");
+    }
+  });
+});
+animators.forEach(animator => {
+  animationsObserver.observe(animator);
+});
+
+function animateBarChart() {
+  bars.forEach(bar => {
+    bar.classList.add("animate");
+  })
+}
+
+/*========== #About Slideshow Functionality ==========*/
 function showSlide(n) {
   slides[slideIndex].style.display = "none";
   dots[slideIndex].classList.remove("active");
@@ -56,7 +94,8 @@ function nextSlide(n) {
   showSlide(slideIndex + n);
 }
 
-/*======== Form Submissions ==========*/
+
+/*========== Form Submissions ==========*/
 // Actually submitting the form
 async function handleFormSubmit(buttonID) {
   var form;

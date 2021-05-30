@@ -444,6 +444,49 @@ footer {
   min-height: var(--section-padding);
 }
 
+/* ======== ANIMATIONS ======== */
+/*  Sliders  */
+.slide-in-left.animate {
+  animation: slideInRight 0.75s ease both;
+}
+.slide-in-right.animate {
+  animation: slideInRight 0.75s ease both;
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Growers */
+.grow-width:not(.animate) {
+  width: 0 !important;
+}
+.grow-width.animate {
+  transition: 1.5s width ease-in-out;
+}
+/* .grow-margin-left:not(.animate) {
+  margin-left: 0 !important;
+}
+.grow-margin-left.animate {
+  transition: 1.5s margin-left ease;
+} */
+
 /* ======== Prevent hover effects on mobile ======== */
 @media (hover: hover) and (pointer: fine){
   .slideshow-wrapper button:hover {
