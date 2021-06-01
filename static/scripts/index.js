@@ -16,16 +16,18 @@ const dots = Array.from(document.getElementsByClassName("dot"));
 // For animations
 let inFromRights = Array.from(document.getElementsByClassName("slide-in-right"));
 let inFromLefts = Array.from(document.getElementsByClassName("slide-in-left"));
+let inFromBelows = Array.from(document.getElementsByClassName("slide-in-below"));
+let sliders = [...inFromLefts, ... inFromRights, ...inFromBelows];
 
-let sliders = [...inFromLefts, ... inFromRights];
+// Special cases
 const barChart = document.getElementById("about-bars");
+let firstSlide = document.getElementById("first-slide");
 
-const animators = [...sliders, barChart];
+const animators = [...sliders, barChart, firstSlide];
 
 // For animating the bar chart bars simultaneously
 let barFills = Array.from(document.getElementsByClassName("fill"));
-// let barPercents = Array.from(document.getElementsByClassName("bar-percent"));
-const bars = [...barFills, ...barPercents]
+const bars = [...barFills]
 
 
 /*========== stickyNav Functionality ==========*/
@@ -82,11 +84,13 @@ function animateBarChart() {
 /*========== #About Slideshow Functionality ==========*/
 function showSlide(n) {
   slides[slideIndex].style.display = "none";
+  slides[slideIndex].classList.remove("animate");
   dots[slideIndex].classList.remove("active");
 
   slideIndex = (n + slides.length) % slides.length; // janky JS modulo
 
   slides[slideIndex].style.display = "flex";  
+  slides[slideIndex].classList.add("animate");
   dots[slideIndex].classList.add("active");
 }
 
