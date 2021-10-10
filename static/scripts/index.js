@@ -6,7 +6,7 @@ const navBar = document.getElementById("navbar");
 // For highlighting nav links
 const sections = Array.from(document.getElementsByTagName("section"));
 const navLinksMap = new Map();
-document.querySelectorAll("nav ul li a").forEach(link => {navLinksMap.set(link.hash, link)});
+document.querySelectorAll("nav div a").forEach(link => {navLinksMap.set(link.hash, link)});
 
 // For slides navigation
 var slideIndex = 0;
