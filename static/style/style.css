@@ -180,16 +180,10 @@ nav {
 }
 nav .link-wrap {
   background: none;
-  height: initial;
-  position: initial;
   max-width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: initial;
   overflow-x: scroll;
-}
-nav ul {
-  list-style: none;
 }
 nav a {
   display: inline;
