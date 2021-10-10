@@ -183,7 +183,7 @@ nav .link-wrap {
   max-width: 100%;
   display: flex;
   justify-content: space-between;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 nav a {
   display: inline;
