@@ -44,52 +44,56 @@
           <!-- Slideshow and Summary wrapper -->
           <div class="flex two-col-desktop">
             <!-- Slideshow container -->
-            <div class="slideshow-wrapper">
-              <!-- Full-width images with caption text -->
-              <div class="slide fade">
-                <img src="assets/images/Iceland.webp">
-                <div class="text">Iceland</div>
+            <div class="slideshow-wrapper slide-in-left">
+              <div class="slides-wrapper">
+                <!-- Full-width images with caption text -->
+                <div id="first-slide" class="slide fade">
+                  <img src="assets/images/Iceland.webp">
+                  <div class="text">Iceland</div>
+                </div>
+                <div class="slide fade">
+                  <img src="assets/images/Paris.webp">
+                  <div class="text">Paris</div>
+                </div>
+                <div class="slide fade">
+                  <img src="assets/images/Orkney.webp">
+                  <div class="text">Orkney</div>
+                </div>
+                <div class="slide fade">
+                  <img src="assets/images/Errol.webp">
+                  <div class="text">Errol</div>
+                </div>
+                <!-- Next and previous buttons -->
+                <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
+                <button class="next" onclick="nextSlide(1)">&#10095;</button>
               </div>
-              <div class="slide fade">
-                <img src="assets/images/Paris.webp">
-                <div class="text">Paris</div>
+              <br>
+              <!-- The dots/circles -->
+              <div class="dot-wrapper">
+                <span class="dot active" onclick="showSlide(0)"></span>
+                <span class="dot" onclick="showSlide(1)"></span>
+                <span class="dot" onclick="showSlide(2)"></span>
+                <span class="dot" onclick="showSlide(3)"></span>
               </div>
-              <div class="slide fade">
-                <img src="assets/images/Orkney.webp">
-                <div class="text">Orkney</div>
-              </div>
-              <div class="slide fade">
-                <img src="assets/images/Errol.webp">
-                <div class="text">Errol</div>
-              </div>
-              <!-- Next and previous buttons -->
-              <button class="prev" onclick="nextSlide(-1)">&#10094;</button>
-              <button class="next" onclick="nextSlide(1)">&#10095;</button>
             </div>
-            <br>
-            <!-- The dots/circles -->
-            <div class="dot-wrapper">
-              <span class="dot active" onclick="showSlide(0)"></span>
-              <span class="dot" onclick="showSlide(1)"></span>
-              <span class="dot" onclick="showSlide(2)"></span>
-              <span class="dot" onclick="showSlide(3)"></span>
-            </div>
-            
+          
             <!-- Autobiographical blurb -->
-            <div class="label bold">Who am I?</div>
-            <div>
-              I'm a Canadian software developer happy to be working at <span><a href="https://www.pureweb.com/" target="_blank" class="highlight">Pure Web</a></span>!
-              <br />
-              I'm home in Canada now, but can't wait until I can travel again!
-              <br />
-              I'm a keen learner and take pride in creating and maintaining.
-              <br />
-              <a href="#contact" class="page-link highlight">Let's make something cool.</a>
+            <div class="blurb-wrapper slide-in-below">
+              <div class="label bold">Who am I?</div>
+              <div>
+                I'm a Canadian software developer happy to be working at <span><a href="https://www.pureweb.com/" target="_blank" class="highlight">Pure Web</a></span>!
+                <br />
+                I'm home in Canada now, but can't wait until I can travel again!
+                <br />
+                I'm a keen learner and take pride in creating and maintaining.
+                <br />
+                <a href="#contact" class="page-link highlight">Let's make something cool.</a>
+              </div>
             </div>
           </div>
 
           <!-- Skill bars container -->
-          <div class="flex two-col-desktop bars-wrapper">
+          <div id= "about-bars" class="flex two-col-desktop bars-wrapper slide-in-right">
             <div class="bar flex">
               <div class="fill" style="width:85%">
                 <div class="tag bold flex">C++</div>
